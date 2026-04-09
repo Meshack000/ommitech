@@ -10,8 +10,8 @@ function Navbar() {
 
                 {/* Logo */}
                 <div className="flex items-center gap-1">
-                    <img className="w-15" src={logo} alt="Ommitech logo" />
-                    <h1 className="text-3xl font-black">Ommitech</h1>
+                    <img className="w-9 md:w-12" src={logo} alt="Ommitech logo" />
+                    <h1 className="text-lg md:text-2xl font-black">Ommitech</h1>
                 </div>
 
                 {/* Desktop Nav */}
