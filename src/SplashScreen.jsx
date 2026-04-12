@@ -55,7 +55,7 @@ export default function SplashScreen({ onFinish }) {
                             whiteSpace: "nowrap",
                         }}
                     >
-                        Ommitech
+                    
                     </span>
 
                     {/* Sweeping underline */}
