@@ -39,7 +39,7 @@ function Footer() {
                           </svg>
                       </a>
                   </div>
-                  <p className="mt-8 text-center">Copyright © 2025 <a href="https://prebuiltui.com">PrebuiltUI</a>. All rights reservered.</p>
+                  <p className="mt-8 text-center">Copyrighty © 2025 <a href="https://prebuiltui.com">PrebuiltUI</a>. All rights reservered.</p>
               </footer>
           </>
           
