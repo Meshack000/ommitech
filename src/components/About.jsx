@@ -71,7 +71,7 @@ export default function AboutPage() {
                         </p>
                     </div>
                     <a
-                        href="https://www.dvxel.com/contact"
+                        href="#"
                         target="_blank"
                         rel="noreferrer"
                         className="inline-block bg-[#0a0f1e] text-white text-xs font-bold uppercase tracking-widest px-10 py-5 rounded-full hover:bg-[#2dd4bf] hover:text-[#0a0f1e] transition-all duration-300 text-center shadow-lg shadow-[#0a0f1e]/5"
