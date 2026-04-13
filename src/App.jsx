@@ -5,6 +5,7 @@ import SplashScreen from "./SplashScreen"
 import { useState } from "react";
 import Hero from './components/Hero';
 import Footer from './components/Footer';
+import RecentFeatures from './components/Feature';
 
 function App() {
 
@@ -17,7 +18,9 @@ function App() {
     <Navbar/>
 
     <Hero/>
+     <RecentFeatures />
     <Footer/>
+    
     
     
     </>

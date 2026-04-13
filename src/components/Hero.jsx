@@ -102,8 +102,8 @@ export default function Hero() {
                         fontFamily: "'Segoe UI', sans-serif",
                     }}
                 >
-                    We build high-performance digital products — from sleek interfaces
-                    to robust systems — that move businesses forward.
+                    We build high-performance digital products  from sleek interfaces
+                    to robust systems  that move businesses forward.
                 </p>
 
                 {/* CTAs */}
