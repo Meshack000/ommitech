@@ -12,7 +12,7 @@ function Home() {
     <>
       <Hero />
       <RecentFeatures />
-      <Footer />
+     
     </>
   )
 }
