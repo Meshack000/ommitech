@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import logo from "../assets/images/logo.png"
 
 function Navbar() {
@@ -9,16 +10,16 @@ function Navbar() {
             <nav className="relative h-[70px] flex items-center justify-between px-6 md:px-16 lg:px-24 xl:px-32 py-4 bg-white text-gray-900">
 
                 {/* Logo */}
-                <div className="flex items-center gap-1">
+                <Link to="/" className="flex items-center gap-1 hover:opacity-80 transition-opacity">
                     <img className="w-9 md:w-12" src={logo} alt="Ommitech logo" />
                     <h1 className="text-lg md:text-2xl font-black">Ommitech</h1>
-                </div>
+                </Link>
 
                 {/* Desktop Nav */}
                 <ul className="hidden md:flex items-center space-x-8 md:pl-28">
                     <li><a href="#" className="border-b-2 border-transparent hover:border-cyan-500 transition-colors duration-300">Solutions</a></li>
                     <li><a href="#" className="border-b-2 border-transparent hover:border-cyan-500 transition-colors duration-300">Case Studies</a></li>
-                    <li><a href="#" className="border-b-2 border-transparent hover:border-cyan-500 transition-colors duration-300">Company</a></li>
+                    <li><Link to="/about" className="border-b-2 border-transparent hover:border-cyan-500 transition-colors duration-300">About</Link></li>
                     <li><a href="#" className="border-b-2 border-transparent hover:border-cyan-500 transition-colors duration-300">Works</a></li>
                     <li><a href="#" className="border-b-2 border-transparent hover:border-cyan-500 transition-colors duration-300">Pricing</a></li>
                 </ul>
@@ -44,7 +45,7 @@ function Navbar() {
                     <ul className="flex flex-col space-y-4 text-lg text-gray-900">
                         <li><a href="#" onClick={() => setIsOpen(false)}>Solutions</a></li>
                         <li><a href="#" onClick={() => setIsOpen(false)}>Case Studies</a></li>
-                        <li><a href="#" onClick={() => setIsOpen(false)}>Company</a></li>
+                        <li><Link to="/about" onClick={() => setIsOpen(false)}>About</Link></li>
                         <li><a href="#" onClick={() => setIsOpen(false)}>Works</a></li>
                         <li><a href="#" onClick={() => setIsOpen(false)}>Pricing</a></li>
                     </ul>
