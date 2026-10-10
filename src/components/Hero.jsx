@@ -1,6 +1,4 @@
-import dashboard from "../assets/images/hero-dashboard.png"
-import collage1 from "../assets/images/hero-collage-1.png"
-import collage2 from "../assets/images/hero-collage-2.png"
+import heroPhoneComposition from "../assets/images/hero-phone-composition.png"
 
 const stats = [
     { value: "50+", label: "Projects Delivered" },
@@ -60,38 +58,13 @@ export default function Hero() {
                     </div>
                 </div>
 
-                {/* Right — Image collage */}
-                <div className="relative">
-                    {/* Decorative offset frame */}
-                    <div className="absolute inset-0 translate-x-4 translate-y-4 border border-[#2dd4bf]/40 hidden md:block"></div>
-
-                    <div className="relative grid grid-cols-2 md:grid-cols-3 gap-3 p-3 border border-[#0a0f1e]/10 bg-white">
-                        <img
-                            src={dashboard}
-                            alt="Ommitech product dashboard preview"
-                            className="col-span-2 md:col-span-2 md:row-span-2 w-full h-full object-cover aspect-[4/3] md:aspect-auto hover:scale-[1.01] transition-transform duration-300"
-                        />
-                        <img
-                            src={collage1}
-                            alt="Ommitech web project preview"
-                            className="w-full h-full object-cover aspect-[4/3] md:aspect-square hover:scale-[1.02] transition-transform duration-300"
-                        />
-                        <img
-                            src={collage2}
-                            alt="Ommitech interface preview"
-                            className="w-full h-full object-cover aspect-[4/3] md:aspect-square hover:scale-[1.02] transition-transform duration-300"
-                        />
-                    </div>
-
-                    {/* Caption bar */}
-                    <div className="mt-4 flex items-center justify-between px-1">
-                        <span className="font-mono text-[9px] uppercase tracking-[0.3em] text-[#0a0f1e]/40">
-                            Fig.01 — Selected Work
-                        </span>
-                        <span className="font-mono text-[9px] uppercase tracking-[0.3em] text-[#2dd4bf] font-bold">
-                            Live Previews
-                        </span>
-                    </div>
+                {/* Right — Single phone visual */}
+                <div className="flex justify-center">
+                    <img
+                        src={heroPhoneComposition}
+                        alt="Phone mockup with floating social media and audience cards"
+                        className="w-full max-w-[400px] h-auto object-contain"
+                    />
                 </div>
 
             </div>
