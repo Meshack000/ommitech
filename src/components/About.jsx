@@ -4,13 +4,17 @@ const leadership = [
     {
         name: "Oppong Mpiani Meshack",
         initials: "OM",
-        role: "Chief Executive Officer",
+        role: "Founder",
+        title: "Chief Executive Officer",
+        label: "CEO",
         description: "Leads the company vision, business direction, and strategic partnerships while setting the long-term roadmap for growth and impact."
     },
     {
         name: "Sheila Xornam Adenyah",
         initials: "SA",
-        role: "Secretary • Head of UI/UX Design",
+        role: "Secretary",
+        title: "Head of UI/UX Design",
+        label: "Secretary • UI/UX Lead",
         description: "Leads design direction, user-centered experiences, and operational support to ensure the brand delivers both clarity and confidence."
     }
 ];
@@ -27,6 +31,34 @@ export default function AboutPage() {
                     </h1>
                     <div className="h-[1px] w-24 bg-[#2dd4bf]"></div>
                 </header>
+
+                {/* Leadership Team */}
+                <div className="mb-32">
+                    <p className="text-[10px] font-mono uppercase tracking-[0.4em] text-[#0a0f1e]/40 mb-10">
+                        // Our Leadership
+                    </p>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        {leadership.map((member, i) => (
+                            <div key={i} className="border border-[#0a0f1e]/10 bg-[#fafafa] p-8 rounded-sm shadow-sm hover:shadow-md transition-shadow duration-300">
+                                <div className="flex items-center justify-between gap-4 mb-6">
+                                    <div className="w-24 h-24 rounded-full bg-[#2dd4bf]/15 text-[#0a0f1e] flex items-center justify-center text-2xl font-bold border border-[#0a0f1e]/5">
+                                        {member.initials}
+                                    </div>
+                                    <div className="bg-[#0a0f1e] text-white px-4 py-2 rounded-full text-[10px] font-mono uppercase tracking-[0.3em] font-bold">
+                                        {member.label}
+                                    </div>
+                                </div>
+
+                                <h3 className="text-2xl font-bold tracking-tight mb-2">{member.name}</h3>
+                                <div className="mb-4">
+                                    <p className="text-[11px] font-mono uppercase tracking-[0.35em] text-[#2dd4bf] font-bold mb-2">{member.role}</p>
+                                    <p className="text-base font-bold tracking-tight text-[#0a0f1e]">{member.title}</p>
+                                </div>
+                                <p className="text-sm text-[#0a0f1e]/60 leading-relaxed">{member.description}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
 
                 {/* Main Content: Two Column Editorial Layout */}
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-start mb-32">
@@ -72,25 +104,6 @@ export default function AboutPage() {
                                 </li>
                             ))}
                         </ul>
-                    </div>
-                </div>
-
-                {/* Leadership Team */}
-                <div className="mt-32">
-                    <p className="text-[10px] font-mono uppercase tracking-[0.4em] text-[#0a0f1e]/40 mb-10">
-                        // Our Team
-                    </p>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        {leadership.map((member, i) => (
-                            <div key={i} className="border border-[#0a0f1e]/10 bg-[#fafafa] p-8 rounded-sm">
-                                <div className="w-16 h-16 rounded-full bg-[#2dd4bf]/15 text-[#0a0f1e] flex items-center justify-center text-xl font-bold mb-6">
-                                    {member.initials}
-                                </div>
-                                <h3 className="text-2xl font-bold tracking-tight mb-2">{member.name}</h3>
-                                <p className="text-[10px] font-mono uppercase tracking-[0.25em] text-[#2dd4bf] mb-4">{member.role}</p>
-                                <p className="text-sm text-[#0a0f1e]/60 leading-relaxed">{member.description}</p>
-                            </div>
-                        ))}
                     </div>
                 </div>
 
