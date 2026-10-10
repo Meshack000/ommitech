@@ -63,7 +63,7 @@ export default function Hero() {
                     <img
                         src={heroPhoneComposition}
                         alt="Phone mockup with floating social media and audience cards"
-                        className="w-full max-w-[400px] h-auto object-contain"
+                        className="w-full max-w-[500px] h-auto object-contain"
                     />
                 </div>
 
