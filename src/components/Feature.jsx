@@ -4,14 +4,14 @@ const works = [
     {
         tag: "Front-End",
         title: "Web Development",
-        client: "Modern React Systems",
-        description: "Building high-performance, responsive interfaces using React, Tailwind, and Framer Motion for seamless user flow."
+        client: "Build & Launch",
+        description: "We design and build modern responsive websites and apps, and we also teach people how to do it through hands-on, practical learning."
     },
     {
         tag: "UI/UX",
-        title: "Interface Design",
-        client: "Digital Product Design",
-        description: "Crafting intuitive user journeys and high-fidelity prototypes that balance aesthetics with functional clarity."
+        title: "UI/UX Design",
+        client: "Design Thinking",
+        description: "From user flows and wireframes to polished interfaces, we help brands and learners create experiences that are both beautiful and effective."
     },
     {
         tag: "Identity",
@@ -20,10 +20,10 @@ const works = [
         description: "Minimalist and scalable brand marks designed to communicate core values and establish a strong market presence."
     },
     {
-        tag: "Creative",
-        title: "Photoshop & Editing",
-        client: "Visual Composition",
-        description: "Advanced photo manipulation and digital asset creation for high-end marketing campaigns and web content."
+        tag: "Training",
+        title: "Learning & Mentorship",
+        client: "For Beginners & Career Growth",
+        description: "We offer guided learning for aspiring web developers and UI/UX designers who want to grow skills and build real-world projects."
     },
     {
         tag: "Systems",
@@ -93,10 +93,10 @@ export default function RecentFeatures() {
                 <div className="mt-24 border border-[#0a0f1e]/10 bg-white rounded-2xl p-10 md:p-16 flex flex-col md:flex-row md:items-center justify-between gap-8 transition-colors hover:border-[#0a0f1e]">
                     <div>
                         <h3 className="text-2xl md:text-3xl font-bold text-[#0a0f1e] mb-2 tracking-tight">
-                            Ready to build?
+                            Ready to build or learn?
                         </h3>
                         <p className="text-sm font-mono uppercase tracking-widest text-[#0a0f1e]/40">
-                            Let's turn your vision into something real.
+                            Let's turn your idea into a product or your interest into skills.
                         </p>
                     </div>
                     <a

@@ -32,9 +32,9 @@ export default function AboutPage() {
                                 UI design.
                             </p>
                             <p>
-                                Whether it's a scalable React architecture, a minimalist brand identity,
-                                or advanced visual assets in Photoshop, our goal is to ship work that
-                                speaks for itself through performance and clarity.
+                                Whether you're building a product, scaling a brand, or learning the craft,
+                                our goal is to help people create digital experiences that are both polished
+                                and practical, while also teaching the skills behind them.
                             </p>
                         </div>
                     </div>
@@ -48,7 +48,7 @@ export default function AboutPage() {
                             {[
                                 { label: "Frameworks", value: "React / Tailwind / Next.js" },
                                 { label: "Design", value: "UI/UX / Logo Design / Branding" },
-                                { label: "Creative", value: "Photoshop / Digital Assets" },
+                                { label: "Training", value: "Web Development & UI/UX Learning" },
                                 { label: "Solutions", value: "End-to-End Website Delivery" }
                             ].map((item, i) => (
                                 <li key={i} className="flex flex-col border-b border-[#0a0f1e]/5 pb-4">
@@ -64,10 +64,10 @@ export default function AboutPage() {
                 <div className="mt-32 border border-[#0a0f1e]/10 bg-white rounded-2xl p-10 md:p-16 flex flex-col md:flex-row md:items-center justify-between gap-8 transition-colors hover:border-[#0a0f1e]">
                     <div>
                         <h3 className="text-2xl md:text-3xl font-bold text-[#0a0f1e] mb-2 tracking-tight">
-                            Ready to build?
+                            Ready to build or learn?
                         </h3>
                         <p className="text-sm font-mono uppercase tracking-widest text-[#0a0f1e]/40">
-                            Let's turn your vision into something real.
+                            Let's turn your idea into a product or your interest into skills.
                         </p>
                     </div>
                     <a
