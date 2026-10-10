@@ -59,11 +59,11 @@ export default function Hero() {
                 </div>
 
                 {/* Right — Single phone visual */}
-                <div className="flex justify-center">
+                <div className="flex justify-center lg:justify-end lg:-mr-12 xl:-mr-24">
                     <img
                         src={heroPhoneComposition}
                         alt="Phone mockup with floating social media and audience cards"
-                        className="w-full max-w-[500px] h-auto object-contain"
+                        className="w-full max-w-[500px] h-auto object-contain lg:max-w-[620px] xl:max-w-[740px]"
                     />
                 </div>
 

@@ -2,7 +2,7 @@ import React from 'react'
 
 function Footer() {
     return (
-        <footer className="flex flex-col items-center justify-center w-full py-16  h-120 text-sm" style={{ backgroundColor: '#0a0f2c' }}>
+        <footer id="contact" className="scroll-mt-24 flex flex-col items-center justify-center w-full py-16  h-120 text-sm" style={{ backgroundColor: '#0a0f2c' }}>
 
             {/* Logo / Brand */}
             <h2 className="text-white text-2xl font-bold tracking-widest uppercase mb-2">Ommitech</h2>

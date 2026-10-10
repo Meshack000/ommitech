@@ -41,7 +41,7 @@ const works = [
 
 export default function RecentFeatures() {
     return (
-        <div className="min-h-screen bg-white px-6 py-24 font-geist text-[#0a0f1e] selection:bg-[#2dd4bf]/20">
+        <div id="services" className="min-h-screen scroll-mt-24 bg-white px-6 py-24 font-geist text-[#0a0f1e] selection:bg-[#2dd4bf]/20">
             <div className="max-w-[1200px] mx-auto">
 
                 {/* Centered Minimalist Header */}
@@ -56,7 +56,8 @@ export default function RecentFeatures() {
                     {works.map((f, i) => (
                         <div
                             key={i}
-                            className="group border border-[#0a0f1e]/10 p-8 flex flex-col justify-between aspect-[4/3] hover:border-[#2dd4bf] transition-all duration-300"
+                            id={f.tag === "Training" ? "training" : undefined}
+                            className="group scroll-mt-24 border border-[#0a0f1e]/10 p-8 flex flex-col justify-between aspect-[4/3] hover:border-[#2dd4bf] transition-all duration-300"
                         >
                             <div>
                                 <div className="flex justify-between items-start mb-6">
@@ -100,9 +101,7 @@ export default function RecentFeatures() {
                         </p>
                     </div>
                     <a
-                        href="#"
-                        target="_blank"
-                        rel="noreferrer"
+                        href="/#contact"
                         className="inline-block bg-[#0a0f1e] text-white text-xs font-bold uppercase tracking-widest px-10 py-5 rounded-full hover:bg-[#2dd4bf] hover:text-[#0a0f1e] transition-all duration-300 text-center shadow-lg shadow-[#0a0f1e]/5"
                     >
                         Get in touch &rarr;
