@@ -44,7 +44,7 @@ export default function SplashScreen({ onFinish }) {
                     src="/Logo/logo.svg"
                     alt="Ommitech"
                     style={{
-                        width: 220,
+                        width: 160,
                         height: "auto",
                         objectFit: "contain",
                         marginBottom: 24,
