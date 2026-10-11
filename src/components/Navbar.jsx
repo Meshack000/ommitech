@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import logo from "../assets/images/logo.png"
 
 function Navbar() {
     const [isOpen, setIsOpen] = useState(false)
@@ -11,8 +10,7 @@ function Navbar() {
         <nav className="sticky top-0 z-50 w-full border-b border-[#0a0f1e]/10 bg-white/95 text-[#0a0f1e] backdrop-blur">
             <div className="relative mx-auto grid h-[72px] max-w-7xl grid-cols-[1fr_auto] items-center px-5 sm:px-8 md:grid-cols-[1fr_auto_1fr] xl:px-12">
                 <Link to="/" onClick={closeMenu} className="flex items-center gap-2 justify-self-start transition-opacity hover:opacity-80">
-                    <img className="w-9 md:w-11" src={logo} alt="" />
-                    <span className="text-lg font-black tracking-tight md:text-xl">Ommitech</span>
+                    <img className="h-8 w-auto md:h-10" src="/Logo/logo.svg" alt="Ommitech" />
                 </Link>
 
                 <ul className="hidden items-center gap-5 text-sm font-medium md:flex lg:gap-8">

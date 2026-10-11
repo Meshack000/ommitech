@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import logo from "../src/assets/images/logo.png";
 
 export default function SplashScreen({ onFinish }) {
     const [phase, setPhase] = useState("init");
@@ -42,13 +41,14 @@ export default function SplashScreen({ onFinish }) {
             >
                 {/* Logo */}
                 <img
-                    src={logo}
+                    src="/Logo/logo.svg"
                     alt="Ommitech"
                     style={{
-                        width: 64,
-                        height: 64,
+                        width: 220,
+                        height: "auto",
                         objectFit: "contain",
                         marginBottom: 24,
+                        filter: "brightness(0) invert(1)",
                         opacity: show("logo", "text", "line") ? 1 : 0,
                         transform: show("logo", "text", "line")
                             ? "translateY(0) scale(1)"
@@ -56,25 +56,6 @@ export default function SplashScreen({ onFinish }) {
                         transition: "opacity 0.7s ease, transform 0.7s cubic-bezier(0.16,1,0.3,1)",
                     }}
                 />
-
-                {/* Brand name */}
-                <div style={{ overflow: "hidden", height: 48 }}>
-                    <h1
-                        style={{
-                            fontFamily: "'Segoe UI', sans-serif",
-                            fontSize: 38,
-                            fontWeight: 700,
-                            letterSpacing: "0.12em",
-                            color: "#ffffff",
-                            margin: 0,
-                            textTransform: "uppercase",
-                            transform: show("text", "line") ? "translateY(0)" : "translateY(52px)",
-                            transition: "transform 0.65s cubic-bezier(0.16,1,0.3,1)",
-                        }}
-                    >
-                        OMMITECH
-                    </h1>
-                </div>
 
                 {/* Tagline */}
                 <div style={{ overflow: "hidden", height: 22, marginTop: 6 }}>

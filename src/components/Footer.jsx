@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import logo from "../assets/images/logo.png"
 
 function Footer() {
     return (
@@ -9,8 +8,7 @@ function Footer() {
                 <div className="grid gap-12 border-b border-white/10 pb-12 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1fr] lg:gap-10">
                     <div>
                         <Link to="/" className="mb-5 inline-flex items-center gap-3 transition-opacity hover:opacity-80">
-                            <img src={logo} alt="" className="h-10 w-10 object-contain" />
-                            <span className="text-xl font-black tracking-tight">Ommitech</span>
+                            <img src="/Logo/logo.svg" alt="Ommitech" className="h-10 w-auto object-contain brightness-0 invert" />
                         </Link>
                         <p className="max-w-sm text-sm leading-7 text-white/60">
                             We build practical digital solutions and teach the skills behind them—from web development to UI/UX design.
