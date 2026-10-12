@@ -1,11 +1,5 @@
 import heroPhoneComposition from "../assets/images/hero-phone-composition.png"
 
-const highlights = [
-    { value: "Build", label: "Digital solutions" },
-    { value: "Learn", label: "Web & UI/UX skills" },
-    { value: "Ghana", label: "Based in Kumasi" },
-];
-
 export default function Hero() {
     return (
         <section className="bg-white text-[#0a0f1e] px-6 md:px-16 lg:px-24 xl:px-32 pt-16 md:pt-24 pb-24 font-geist selection:bg-[#2dd4bf]/20">
@@ -13,21 +7,24 @@ export default function Hero() {
 
                 {/* Left — Content */}
                 <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
-                    <p className="font-mono text-[10px] uppercase tracking-[0.4em] text-[#2dd4bf] font-bold mb-6">
-                        // Digital solutions & practical learning
+                    <p className="hero-slide-in font-mono text-[10px] uppercase tracking-[0.4em] text-[#2dd4bf] font-bold mb-6">
+                        Digital solutions · Practical training
                     </p>
 
-                    <h1 className="text-4xl md:text-6xl font-bold tracking-tighter leading-[1.05] max-w-xl">
-                        We build digital products{" "}
-                        <span className="text-[#2dd4bf]">and teach</span>{" "}
-                        the skills behind them.
+                    <h1 className="max-w-xl text-4xl font-bold leading-[1.05] tracking-tighter md:text-6xl">
+                        <span className="hero-slide-in block" style={{ animationDelay: "150ms" }}>
+                            We build digital.
+                        </span>
+                        <span className="hero-slide-in mt-2 block text-[#2dd4bf]" style={{ animationDelay: "450ms" }}>
+                            You grow with us.
+                        </span>
                     </h1>
 
-                    <p className="mt-6 text-base md:text-lg text-[#0a0f1e]/60 leading-relaxed max-w-[480px]">
-                        Ommitech helps businesses with web development, UI/UX design, and brand identity—and helps aspiring creators learn those skills through practical training.
+                    <p className="hero-slide-in mt-6 max-w-[480px] text-base leading-relaxed text-[#0a0f1e]/60 md:text-lg" style={{ animationDelay: "750ms" }}>
+                        Web, design, and practical tech training.
                     </p>
 
-                    <div className="mt-10 flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto">
+                    <div className="hero-slide-in mt-10 flex w-full flex-col items-stretch gap-4 sm:w-auto sm:flex-row sm:items-center" style={{ animationDelay: "1s" }}>
                         <a
                             href="/#services"
                             className="inline-flex items-center justify-center bg-[#0a0f1e] text-white text-xs font-bold uppercase tracking-widest px-8 py-4 hover:bg-[#2dd4bf] hover:text-[#0a0f1e] transition-colors duration-300"
@@ -42,19 +39,6 @@ export default function Hero() {
                         </a>
                     </div>
 
-                    {/* Stats */}
-                    <div className="mt-14 md:mt-16 flex flex-wrap justify-center lg:justify-start gap-x-14 gap-y-8 border-t border-[#0a0f1e]/10 pt-8 w-full">
-                        {highlights.map((s) => (
-                            <div key={s.label} className="text-center lg:text-left">
-                                <div className="text-3xl md:text-4xl font-bold tracking-tight text-[#2dd4bf]">
-                                    {s.value}
-                                </div>
-                                <div className="mt-1 text-[10px] font-mono uppercase tracking-[0.2em] text-[#0a0f1e]/40">
-                                    {s.label}
-                                </div>
-                            </div>
-                        ))}
-                    </div>
                 </div>
 
                 {/* Right — Single phone visual */}
