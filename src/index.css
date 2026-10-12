@@ -16,6 +16,55 @@ select {
   font-family: inherit;
 }
 
+@keyframes announcement-scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.announcement-bar {
+  overflow: hidden;
+  border-bottom: 1px solid rgb(255 255 255 / 10%);
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.announcement-track {
+  display: flex;
+  width: max-content;
+  animation: announcement-scroll 32s linear infinite;
+}
+
+.announcement-message {
+  display: flex;
+  min-height: 36px;
+  flex: none;
+  align-items: center;
+  gap: 1rem;
+  padding-inline: 1rem;
+  white-space: nowrap;
+}
+
+.announcement-link {
+  color: #2dd4bf;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.announcement-link:hover {
+  color: white;
+}
+
+.announcement-dot {
+  color: #2dd4bf;
+}
+
+.announcement-bar:hover .announcement-track,
+.announcement-bar:focus-within .announcement-track {
+  animation-play-state: paused;
+}
+
 @keyframes hero-slide-in {
   from {
     opacity: 0;
@@ -35,5 +84,15 @@ select {
 @media (prefers-reduced-motion: reduce) {
   .hero-slide-in {
     animation: none;
+  }
+
+  .announcement-track {
+    width: 100%;
+    justify-content: center;
+    animation: none;
+  }
+
+  .announcement-message[aria-hidden="true"] {
+    display: none;
   }
 }
