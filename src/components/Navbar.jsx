@@ -8,23 +8,14 @@ function Navbar() {
 
     return (
         <div className="sticky top-0 z-50 w-full">
-            <div className="announcement-bar bg-[#0a0f1e] text-white">
-                <div className="announcement-track">
-                    <div className="announcement-message">
-                        <span>Want to learn web development or UI/UX?</span>
-                        <a href="/#training" className="announcement-link">
-                            Book a training session <span aria-hidden="true">→</span>
-                        </a>
-                        <span className="announcement-dot" aria-hidden="true">✦</span>
-                    </div>
-                    <div className="announcement-message" aria-hidden="true">
-                        <span>Want to learn web development or UI/UX?</span>
-                        <a href="/#training" tabIndex={-1} className="announcement-link">
-                            Book a training session <span aria-hidden="true">→</span>
-                        </a>
-                        <span className="announcement-dot" aria-hidden="true">✦</span>
-                    </div>
-                </div>
+            <div className="flex min-h-9 w-full items-center justify-center gap-2 bg-[#0a0f1e] px-4 py-2 text-center text-xs text-white sm:gap-3">
+                <span>Interested in learning web development or UI/UX?</span>
+                <a
+                    href="/#training"
+                    className="shrink-0 font-semibold text-[#2dd4bf] underline underline-offset-4 transition-colors hover:text-white"
+                >
+                    Let’s talk
+                </a>
             </div>
 
             <nav className="w-full border-b border-[#0a0f1e]/10 bg-white/95 text-[#0a0f1e] backdrop-blur">
