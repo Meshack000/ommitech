@@ -41,6 +41,22 @@ function Footer() {
                         <p className="mt-3 text-sm leading-7 text-white/60">
                             Building digital solutions and skills from Kumasi.
                         </p>
+                        <a
+                            href="https://www.instagram.com/ommitech_/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="mt-4 inline-block text-sm text-white/60 transition-colors hover:text-[#2dd4bf]"
+                        >
+                            Instagram
+                        </a>
+                        <a
+                            href="https://www.linkedin.com/company/ommitech/?viewAsMember=true"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="mt-2 block text-sm text-white/60 transition-colors hover:text-[#2dd4bf]"
+                        >
+                            LinkedIn
+                        </a>
                     </div>
                 </div>
 
