@@ -1,33 +1,21 @@
 import { useEffect, useState } from 'react'
 
-const codeSnippet = `function PhoneDemo() {
-  return (
-    <PhoneMockup
-      title="Your next idea"
-      description="Made for mobile."
-      buttonLabel="Get started"
-    />
-  );
-}`
-
-function highlightCodeLine(line) {
-    const tokens = line.split(/("(?:[^"]*)"|'(?:[^']*)'|\\b(?:function|return)\\b|\\bPhoneMockup\\b|\\bPhoneDemo\\b)/g)
-
-    return tokens.map((token, index) => {
-        let color = 'text-neutral-300'
-
-        if (/^["']/.test(token)) color = 'text-emerald-300'
-        else if (token === 'function' || token === 'return') color = 'text-violet-400'
-        else if (token === 'PhoneMockup') color = 'text-sky-300'
-        else if (token === 'PhoneDemo') color = 'text-amber-200'
-
-        return <span className={color} key={`${index}-${token}`}>{token}</span>
-    })
-}
+const codeLines = [
+    [{ text: 'function ', className: 'text-violet-400' }, { text: 'PhoneDemo', className: 'text-amber-200' }, { text: '() {' }],
+    [{ text: '  ' }, { text: 'return', className: 'text-violet-400' }, { text: ' (' }],
+    [{ text: '    <' }, { text: 'PhoneMockup', className: 'text-sky-300' }],
+    [{ text: '      title=' }, { text: '"Your next idea"', className: 'text-emerald-300' }],
+    [{ text: '      description=' }, { text: '"Made for mobile."', className: 'text-emerald-300' }],
+    [{ text: '      buttonLabel=' }, { text: '"Get started"', className: 'text-emerald-300' }],
+    [{ text: '    />' }],
+    [{ text: '  });' }],
+    [{ text: '}' }],
+]
+const totalCharacters = codeLines.flat().reduce((total, token) => total + token.text.length, 0)
 
 function PhonePreview() {
     return (
-        <div className="w-[min(100%,260px)] rounded-[2.5rem] border-[6px] border-neutral-800 bg-neutral-950 p-2 shadow-2xl shadow-black/40">
+        <div className="phone-preview-device w-[min(100%,260px)] rounded-[2.5rem] border-[6px] border-neutral-800 bg-neutral-950 p-2 shadow-2xl shadow-black/40">
             <div className="overflow-hidden rounded-[2rem] bg-white">
                 <div className="flex items-center justify-between px-5 pb-2 pt-3 text-[10px] font-semibold text-neutral-800">
                     <span>9:41</span>
@@ -69,31 +57,40 @@ function PhonePreview() {
 export default function CodePreviewCard() {
     const [activeView, setActiveView] = useState('code')
     const [typedCharacters, setTypedCharacters] = useState(0)
-    const [isTyping, setIsTyping] = useState(true)
+    const [replayKey, setReplayKey] = useState(0)
 
     useEffect(() => {
-        if (!isTyping) return undefined
+        if (typedCharacters >= totalCharacters) return undefined
 
-        if (typedCharacters >= codeSnippet.length) {
-            const previewTimer = setTimeout(() => {
-                setActiveView('preview')
-                setIsTyping(false)
-            }, 1200)
+        const typingInterval = window.setInterval(() => {
+            setTypedCharacters((characters) => Math.min(characters + 1, totalCharacters))
+        }, 22)
 
-            return () => clearTimeout(previewTimer)
-        }
+        return () => window.clearInterval(typingInterval)
+    }, [replayKey, typedCharacters])
 
-        const typingTimer = setTimeout(() => {
-            setTypedCharacters((count) => count + 1)
-        }, 35)
+    useEffect(() => {
+        if (typedCharacters !== totalCharacters) return undefined
 
-        return () => clearTimeout(typingTimer)
-    }, [isTyping, typedCharacters])
+        const previewTimeout = window.setTimeout(() => setActiveView('preview'), 1500)
+        return () => window.clearTimeout(previewTimeout)
+    }, [typedCharacters, replayKey])
+
+    useEffect(() => {
+        if (activeView !== 'preview') return undefined
+
+        const replayTimeout = window.setTimeout(() => {
+            setTypedCharacters(0)
+            setActiveView('code')
+        }, 4000)
+
+        return () => window.clearTimeout(replayTimeout)
+    }, [activeView])
 
     const replay = () => {
-        setTypedCharacters(0)
         setActiveView('code')
-        setIsTyping(true)
+        setTypedCharacters(0)
+        setReplayKey((key) => key + 1)
     }
 
     return (
@@ -105,12 +102,12 @@ export default function CodePreviewCard() {
                         <span className="h-3 w-3 rounded-full bg-yellow-400" />
                         <span className="h-3 w-3 rounded-full bg-green-500" />
                     </div>
-                    <span className="truncate font-mono text-xs text-neutral-400">phone-demo.jsx</span>
+                    <span className="truncate font-mono text-xs text-neutral-400">phone-demo.tsx</span>
                     <span className="justify-self-end font-mono text-xs text-neutral-500">45%</span>
                 </div>
 
                 <div className="flex items-center justify-between px-4 sm:px-5">
-                    <div role="tablist" aria-label="Code example view" className="flex gap-1">
+                    <div className="flex gap-1" role="tablist" aria-label="Code example view">
                         {['preview', 'code'].map((view) => (
                             <button
                                 key={view}
@@ -119,28 +116,28 @@ export default function CodePreviewCard() {
                                 id={`code-preview-tab-${view}`}
                                 aria-selected={activeView === view}
                                 aria-controls="code-preview-panel"
-                                onClick={() => setActiveView(view)}
-                                className={`border-b-2 px-3 py-2 text-xs font-medium capitalize transition-colors ${
+                                disabled={view === 'preview' && activeView !== 'preview'}
+                                onClick={() => view === 'code' ? replay() : setActiveView(view)}
+                                className={`border-b-2 px-3 py-2 text-xs font-medium transition-colors ${
                                     activeView === view
                                         ? 'border-teal-400 text-white'
-                                        : 'border-transparent text-neutral-500 hover:text-neutral-300'
+                                        : 'border-transparent text-neutral-500 hover:text-neutral-300 disabled:cursor-not-allowed disabled:hover:text-neutral-500'
                                 }`}
                             >
-                                {view === 'preview' ? 'Live preview' : 'Code'}
+                                {view === 'preview' ? 'Live Preview' : 'Code'}
                             </button>
                         ))}
                     </div>
                     <button
                         type="button"
                         onClick={replay}
-                        className="inline-flex items-center gap-1.5 rounded-md px-2 py-1.5 text-xs text-neutral-400 transition-colors hover:bg-neutral-800 hover:text-white"
-                        aria-label="Replay code typing animation"
+                        aria-label="Replay code typing"
+                        className="mb-1 rounded-md p-1.5 text-neutral-500 transition-colors hover:bg-neutral-800 hover:text-neutral-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-teal-400"
                     >
-                        <svg viewBox="0 0 24 24" className="h-3.5 w-3.5 fill-none stroke-current" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                            <path d="M3 12a9 9 0 1 0 2.64-6.36L3 8" />
+                        <svg viewBox="0 0 24 24" className="h-4 w-4 fill-none stroke-current" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                            <path d="M3 12a9 9 0 1 0 2.6-6.4L3 8" />
                             <path d="M3 3v5h5" />
                         </svg>
-                        Replay
                     </button>
                 </div>
             </header>
@@ -149,27 +146,46 @@ export default function CodePreviewCard() {
                 id="code-preview-panel"
                 role="tabpanel"
                 aria-labelledby={`code-preview-tab-${activeView}`}
-                className={`min-h-[390px] ${activeView === 'code' ? 'overflow-x-auto bg-neutral-950 px-4 py-5 sm:px-6' : 'flex items-center justify-center bg-neutral-900 p-6 sm:p-8'}`}
+                className={`flex min-h-[390px] items-center justify-center ${
+                    activeView === 'code'
+                        ? 'overflow-x-auto bg-neutral-950 px-4 py-5 sm:px-6'
+                        : 'bg-neutral-900 p-6 sm:p-8'
+                } transition-colors duration-700`}
             >
                 {activeView === 'code' ? (
-                    <pre className="font-mono text-xs leading-7 sm:text-[13px]">
+                    <pre className="w-full font-mono text-xs leading-7 sm:text-[13px]">
                         <code>
-                            {codeSnippet.slice(0, typedCharacters).split('\n').map((line, index, lines) => (
-                                <span className="flex min-w-max" key={index}>
-                                    <span className="mr-6 w-5 select-none text-right text-neutral-600" aria-hidden="true">{index + 1}</span>
-                                    <span>
-                                        {highlightCodeLine(line)}
-                                        {index === lines.length - 1 && isTyping && (
-                                            <span className="ml-px inline-block h-4 w-1 animate-pulse bg-teal-300 align-middle" aria-hidden="true" />
-                                        )}
-                                        {!line && '\u00a0'}
+                            {(() => {
+                                let remainingCharacters = typedCharacters
+
+                                return codeLines.map((line, index) => (
+                                    <span className="flex min-w-max" key={index}>
+                                        <span className="mr-6 w-5 select-none text-right text-neutral-600" aria-hidden="true">{index + 1}</span>
+                                        <span className="text-neutral-300">
+                                            {line.map((token, tokenIndex) => {
+                                                const visibleLength = Math.min(remainingCharacters, token.text.length)
+                                                remainingCharacters -= visibleLength
+                                                return (
+                                                    <span className={token.className} key={tokenIndex}>
+                                                        {token.text.slice(0, visibleLength)}
+                                                    </span>
+                                                )
+                                            })}
+                                        </span>
                                     </span>
-                                </span>
-                            ))}
+                                ))
+                            })()}
                         </code>
                     </pre>
                 ) : (
-                    <PhonePreview />
+                    <div className="preview-scene">
+                        <div className="preview-orbit" aria-hidden="true" />
+                        <div className="preview-glow" aria-hidden="true" />
+                        <div className="phone-preview-enter">
+                            <PhonePreview />
+                        </div>
+                        <div className="preview-sheen" aria-hidden="true" />
+                    </div>
                 )}
             </div>
         </section>

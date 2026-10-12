@@ -10,7 +10,7 @@ function Home() {
   return (
     <>
       <Hero />
-      <section className="bg-white px-6 py-16 md:px-12 md:py-24">
+      <section className="bg-transparent px-6 py-16 md:px-12 md:py-24">
         <div className="mx-auto max-w-5xl">
           <div className="mx-auto mb-10 max-w-2xl text-center">
             <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-teal-600">Thoughtful by design</p>
