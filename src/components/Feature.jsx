@@ -18,13 +18,6 @@ const services = [
     }
 ];
 
-const learningTopics = [
-    "Web development",
-    "UI/UX design",
-    "Practical projects",
-    "Guided mentorship"
-];
-
 const process = [
     {
         number: "01",
@@ -130,8 +123,8 @@ export default function RecentFeatures() {
                 </div>
 
                 <section id="training" className="scroll-mt-28 overflow-hidden bg-[#0a0f1e] text-white">
-                    <div className="grid gap-8 p-8 md:grid-cols-[1.1fr_0.9fr] md:items-center md:p-12 lg:p-16">
-                        <div>
+                    <div className="grid gap-8 p-6 sm:p-8 md:grid-cols-2 md:items-center md:gap-12 md:p-12 lg:p-16">
+                        <div className="py-2">
                             <p className="mb-5 font-mono text-[10px] font-bold uppercase tracking-[0.35em] text-[#2dd4bf]">
                                 // Learn with Ommitech
                             </p>
@@ -141,18 +134,15 @@ export default function RecentFeatures() {
                             <p className="mt-5 max-w-xl text-sm leading-7 text-white/65 md:text-base">
                                 We guide aspiring creators through web development and UI/UX design with practical learning, project work, and mentorship.
                             </p>
-                            <a href="/#contact" className="mt-8 inline-flex items-center gap-3 text-xs font-bold uppercase tracking-[0.15em] text-[#2dd4bf] transition-colors hover:text-white">
+                            <a href="/#contact" className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-[#2dd4bf] transition-colors hover:text-white">
                                 Ask about learning <span aria-hidden="true">→</span>
                             </a>
                         </div>
-                        <ul className="grid gap-3 sm:grid-cols-2">
-                            {learningTopics.map((topic, index) => (
-                                <li key={topic} className="flex min-h-20 items-center gap-4 border border-white/15 px-5 py-4">
-                                    <span className="font-mono text-[10px] text-[#2dd4bf]">0{index + 1}</span>
-                                    <span className="text-sm font-semibold">{topic}</span>
-                                </li>
-                            ))}
-                        </ul>
+                        <img
+                            src="/banner.png"
+                            alt="Ommitech learning banner: crafting digital experiences in UI/UX design, frontend development, graphic design, brand identity, and web design"
+                            className="h-auto max-h-[360px] w-full object-contain"
+                        />
                     </div>
                 </section>
 
