@@ -1,6 +1,23 @@
+import { useEffect, useState } from "react"
 import heroPhoneComposition from "../assets/images/hero-phone-composition.png"
 
+const heroMessages = [
+    "We build digital.",
+    "We teach web development.",
+    "We teach UI/UX design.",
+]
+
 export default function Hero() {
+    const [messageIndex, setMessageIndex] = useState(0)
+
+    useEffect(() => {
+        const intervalId = window.setInterval(() => {
+            setMessageIndex((currentIndex) => (currentIndex + 1) % heroMessages.length)
+        }, 3500)
+
+        return () => window.clearInterval(intervalId)
+    }, [])
+
     return (
         <section className="bg-white text-[#0a0f1e] px-6 md:px-16 lg:px-24 xl:px-32 pt-8 md:pt-12 pb-12 md:pb-16 font-geist selection:bg-[#2dd4bf]/20">
             <div className="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-14 items-center">
@@ -12,8 +29,14 @@ export default function Hero() {
                     </p>
 
                     <h1 className="max-w-xl text-4xl font-bold leading-[1.05] tracking-tighter md:text-6xl">
-                        <span className="hero-slide-in block" style={{ animationDelay: "350ms" }}>
-                            We build digital.
+                        <span className="block min-h-[2.1em]">
+                            <span
+                                key={messageIndex}
+                                className="hero-slide-in block text-balance"
+                                aria-live="polite"
+                            >
+                                {heroMessages[messageIndex]}
+                            </span>
                         </span>
                         <span className="hero-slide-in mt-2 block text-[#2dd4bf]" style={{ animationDelay: "850ms" }}>
                             You grow with us.
