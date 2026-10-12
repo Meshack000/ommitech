@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import heroPhoneComposition from "../assets/images/hero-phone-composition.png"
+import heroPhoneComposition from "../assets/images/hero-phone-composition.webp"
 
 const heroMessages = [
     "We build digital.",
@@ -69,6 +69,10 @@ export default function Hero() {
                     <img
                         src={heroPhoneComposition}
                         alt="Phone mockup with floating social media and audience cards"
+                        width="768"
+                        height="768"
+                        fetchPriority="high"
+                        decoding="async"
                         className="w-full max-w-[500px] h-auto object-contain lg:max-w-[620px] xl:max-w-[740px]"
                     />
                 </div>

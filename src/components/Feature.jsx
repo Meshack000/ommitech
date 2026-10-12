@@ -139,8 +139,12 @@ export default function RecentFeatures() {
                             </a>
                         </div>
                         <img
-                            src="/banner.png"
+                            src="/banner.webp"
                             alt="Ommitech learning banner: crafting digital experiences in UI/UX design, frontend development, graphic design, brand identity, and web design"
+                            width="1630"
+                            height="910"
+                            loading="lazy"
+                            decoding="async"
                             className="h-auto max-h-[360px] w-full object-contain"
                         />
                     </div>
