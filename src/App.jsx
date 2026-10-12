@@ -1,7 +1,5 @@
-import React, { useState } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
-import SplashScreen from "./SplashScreen"
 import Hero from './components/Hero'
 import Footer from './components/Footer'
 import RecentFeatures from './components/Feature'
@@ -18,12 +16,9 @@ function Home() {
 }
 
 function App() {
-  const [splashDone, setSplashDone] = useState(false);
-
   return (
     <Router>
       <>
-        {!splashDone && <SplashScreen onFinish={() => setSplashDone(true)} />}
         <Navbar />
 
         <Routes>

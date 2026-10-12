@@ -12,7 +12,7 @@ export default function SplashScreen({ onFinish }) {
             setTimeout(() => onFinish?.(), 3900),
         ];
         return () => timers.forEach(clearTimeout);
-    }, []);
+    }, [onFinish]);
 
     const show = (...phases) => phases.includes(phase);
 
