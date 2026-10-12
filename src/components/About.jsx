@@ -10,7 +10,7 @@ const leadership = [
         description: "Leads the company vision, business direction, and strategic partnerships while setting the long-term roadmap for growth and impact."
     },
     {
-        name: "Sheila Xornam Adenyah",
+        name: "Sheila Xornam Adanyah",
         initials: "SA",
         role: "Secretary",
         title: "Head of UI/UX Design",
