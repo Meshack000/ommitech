@@ -13,7 +13,7 @@ export default function Hero() {
     useEffect(() => {
         const intervalId = window.setInterval(() => {
             setMessageIndex((currentIndex) => (currentIndex + 1) % heroMessages.length)
-        }, 3500)
+        }, 6000)
 
         return () => window.clearInterval(intervalId)
     }, [])
