@@ -300,21 +300,43 @@ export default function RecentFeatures() {
                                 key={`${item.title}-${index}`}
                                 className="group min-w-0"
                             >
-                                <WorkArtwork item={item} index={index} />
+                                {item.href ? (
+                                    <a
+                                        href={item.href}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        aria-label={`View ${item.title} case study`}
+                                        className="block rounded-2xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#11998e]"
+                                    >
+                                        <WorkArtwork item={item} index={index} />
+                                    </a>
+                                ) : (
+                                    <WorkArtwork item={item} index={index} />
+                                )}
                                 <div className="flex items-start justify-between gap-4 pt-5">
                                     <div className="min-w-0">
                                         <h4 className="text-2xl font-bold tracking-tight text-[#0a0f1e] transition-colors duration-300 group-hover:text-[#11998e] sm:text-3xl">
                                             {item.href ? (
-                                                <a href={item.href} target="_blank" rel="noreferrer">{item.title}</a>
+                                                <a href={item.href} target="_blank" rel="noopener noreferrer">{item.title}</a>
                                             ) : item.title}
                                         </h4>
                                         <p className="mt-2 text-sm text-[#0a0f1e]/55">{item.tag}</p>
                                     </div>
                                     <span className="mt-1 grid h-10 w-10 shrink-0 place-items-center rounded-full border border-[#0a0f1e]/15 text-lg transition-all duration-300 group-hover:border-[#0a0f1e] group-hover:bg-[#0a0f1e] group-hover:text-white" aria-hidden="true">↗</span>
                                 </div>
-                                <div className="mt-4 flex items-center justify-between gap-3 border-t border-[#0a0f1e]/10 pt-3">
+                                <div className="mt-4 flex flex-wrap items-center justify-between gap-3 border-t border-[#0a0f1e]/10 pt-3">
                                     <span className="text-[11px] font-medium text-[#0a0f1e]/65">{item.category}</span>
                                     <span className="text-right text-[11px] text-[#0a0f1e]/40">{item.stack.slice(0, 2).join(" · ")}</span>
+                                    {item.href && (
+                                        <a
+                                            href={item.href}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="shrink-0 text-[11px] font-semibold text-[#11998e] underline-offset-4 hover:underline focus-visible:underline"
+                                        >
+                                            View case study
+                                        </a>
+                                    )}
                                 </div>
                             </article>
                         ))}
