@@ -222,10 +222,10 @@ export default function RecentFeatures() {
                         // What we do
                     </p>
                     <h2 className="text-3xl font-bold leading-tight tracking-tight md:text-5xl">
-                        Digital solutions for businesses. <span className="text-[#0a0f1e]/40">Practical skills for people.</span>
+                        We make digital work, <span className="text-[#0a0f1e]/40">and help others learn it.</span>
                     </h2>
                     <p className="mt-5 max-w-xl text-base leading-7 text-[#0a0f1e]/60">
-                        Whether you need a digital product built or want to learn how to create one, Ommitech can help you take the next step.
+                        Based in Kumasi, we work on websites, interfaces, and visual identities. We also teach web development and UI/UX through practical projects.
                     </p>
                 </header>
 
@@ -246,10 +246,10 @@ export default function RecentFeatures() {
                                 // Learn with Ommitech
                             </p>
                             <h3 className="max-w-xl text-3xl font-bold leading-tight tracking-tight md:text-4xl">
-                                Build your skills by doing real work.
+                                Learn by building something of your own.
                             </h3>
                             <p className="mt-5 max-w-xl text-sm leading-7 text-white/65 md:text-base">
-                                We guide aspiring creators through web development and UI/UX design with practical learning, project work, and mentorship.
+                                Learn web development and UI/UX by working through practical projects with guidance along the way.
                             </p>
                             <a href="/#contact" className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-[#2dd4bf] transition-colors hover:text-white">
                                 Ask about learning <span aria-hidden="true">→</span>
@@ -271,11 +271,11 @@ export default function RecentFeatures() {
                     <div className="grid gap-8 border-y border-[#0a0f1e]/10 py-10 md:grid-cols-[1fr_auto] md:items-end md:py-14">
                         <div className="max-w-2xl">
                             <p className="mb-4 font-mono text-[10px] font-bold uppercase tracking-[0.35em] text-[#2dd4bf]">
-                                // Selected work
+                                A selection of our work
                             </p>
-                            <h3 className="text-3xl font-bold tracking-tight md:text-5xl">Good work speaks for itself.</h3>
+                            <h3 className="text-3xl font-bold tracking-tight md:text-5xl">Projects, concepts, and visual explorations.</h3>
                             <p className="mt-5 max-w-xl text-sm leading-7 text-[#0a0f1e]/60 md:text-base">
-                                We build thoughtful digital experiences and practical solutions for businesses, creators, and communities. Here is a snapshot of the kind of work we’re proud to share.
+                                Browse a few examples across mobile product design, web development, and brand identity. Each one starts with a problem to solve and a person on the other side of the screen.
                             </p>
                         </div>
                         <a href="/#contact" className="inline-flex items-center gap-3 text-xs font-bold uppercase tracking-widest text-[#0a0f1e] transition-colors hover:text-[#11998e]">

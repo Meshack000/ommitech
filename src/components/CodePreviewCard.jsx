@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react'
 
 const codeLines = [
-    [{ text: 'function ', className: 'text-violet-400' }, { text: 'PhoneDemo', className: 'text-amber-200' }, { text: '() {' }],
+    [{ text: 'function ', className: 'text-violet-400' }, { text: 'OmmitechPreview', className: 'text-amber-200' }, { text: '() {' }],
     [{ text: '  ' }, { text: 'return', className: 'text-violet-400' }, { text: ' (' }],
     [{ text: '    <' }, { text: 'PhoneMockup', className: 'text-sky-300' }],
-    [{ text: '      title=' }, { text: '"Your next idea"', className: 'text-emerald-300' }],
-    [{ text: '      description=' }, { text: '"Made for mobile."', className: 'text-emerald-300' }],
-    [{ text: '      buttonLabel=' }, { text: '"Get started"', className: 'text-emerald-300' }],
+    [{ text: '      title=' }, { text: '"Digital skills, built in Kumasi."', className: 'text-emerald-300' }],
+    [{ text: '      description=' }, { text: '"Web development and UI/UX, learned by making."', className: 'text-emerald-300' }],
+    [{ text: '      buttonLabel=' }, { text: '"See the training"', className: 'text-emerald-300' }],
     [{ text: '    />' }],
     [{ text: '  });' }],
     [{ text: '}' }],
@@ -31,12 +31,12 @@ function PhonePreview() {
                             </svg>
                         </span>
                     </div>
-                    <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-teal-600">Ideas into impact</p>
-                    <h2 className="text-2xl font-bold leading-tight tracking-tight text-neutral-950">Your next idea starts here.</h2>
-                    <p className="mt-3 text-xs leading-5 text-neutral-500">Digital products and practical skills, thoughtfully built for you.</p>
-                    <button type="button" className="mt-5 w-full rounded-xl bg-neutral-950 px-4 py-3 text-xs font-semibold text-white">
-                        Get started
-                    </button>
+                    <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-teal-700">Kumasi · Ghana</p>
+                    <h2 className="text-2xl font-bold leading-tight tracking-tight text-neutral-950">Digital skills, built by doing.</h2>
+                    <p className="mt-3 text-xs leading-5 text-neutral-600">Web development and UI/UX, learned through hands-on projects.</p>
+                    <a href="/#training" className="mt-5 block w-full rounded-xl bg-neutral-950 px-4 py-3 text-center text-xs font-semibold text-white">
+                        See the training
+                    </a>
                     <div className="mt-6 flex items-center gap-3 rounded-2xl bg-neutral-50 p-3">
                         <div className="grid h-9 w-9 place-items-center rounded-xl bg-teal-100 text-teal-700" aria-hidden="true">
                             <svg viewBox="0 0 24 24" className="h-5 w-5 fill-none stroke-current" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
@@ -44,8 +44,8 @@ function PhonePreview() {
                             </svg>
                         </div>
                         <div>
-                            <p className="text-[11px] font-semibold text-neutral-900">Built with purpose</p>
-                            <p className="mt-0.5 text-[10px] text-neutral-500">Designed in Kumasi, Ghana</p>
+                            <p className="text-[11px] font-semibold text-neutral-900">Learn by making</p>
+                            <p className="mt-0.5 text-[10px] text-neutral-500">Small projects. Useful skills.</p>
                         </div>
                     </div>
                 </div>
@@ -60,21 +60,21 @@ export default function CodePreviewCard() {
     const [replayKey, setReplayKey] = useState(0)
 
     useEffect(() => {
-        if (typedCharacters >= totalCharacters) return undefined
+        if (activeView !== 'code' || typedCharacters >= totalCharacters) return undefined
 
         const typingInterval = window.setInterval(() => {
             setTypedCharacters((characters) => Math.min(characters + 1, totalCharacters))
         }, 22)
 
         return () => window.clearInterval(typingInterval)
-    }, [replayKey, typedCharacters])
+    }, [activeView, replayKey, typedCharacters])
 
     useEffect(() => {
-        if (typedCharacters !== totalCharacters) return undefined
+        if (activeView !== 'code' || typedCharacters !== totalCharacters) return undefined
 
         const previewTimeout = window.setTimeout(() => setActiveView('preview'), 1500)
         return () => window.clearTimeout(previewTimeout)
-    }, [typedCharacters, replayKey])
+    }, [activeView, typedCharacters, replayKey])
 
     useEffect(() => {
         if (activeView !== 'preview') return undefined
@@ -94,7 +94,7 @@ export default function CodePreviewCard() {
     }
 
     return (
-        <section aria-label="Interactive code example" className="overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-950 text-white shadow-2xl shadow-black/20">
+        <section aria-label="Code and mobile preview example" className="overflow-hidden border border-neutral-800 bg-neutral-950 text-white shadow-xl shadow-black/10">
             <header className="border-b border-neutral-800 bg-neutral-900">
                 <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-3 px-4 py-3 sm:px-5">
                     <div className="flex items-center gap-2" aria-hidden="true">
@@ -102,8 +102,8 @@ export default function CodePreviewCard() {
                         <span className="h-3 w-3 rounded-full bg-yellow-400" />
                         <span className="h-3 w-3 rounded-full bg-green-500" />
                     </div>
-                    <span className="truncate font-mono text-xs text-neutral-400">phone-demo.tsx</span>
-                    <span className="justify-self-end font-mono text-xs text-neutral-500">45%</span>
+                    <span className="truncate font-mono text-xs text-neutral-400">ommitech-preview.jsx</span>
+                    <span className="justify-self-end font-mono text-xs text-neutral-500">Example</span>
                 </div>
 
                 <div className="flex items-center justify-between px-4 sm:px-5">
@@ -116,12 +116,11 @@ export default function CodePreviewCard() {
                                 id={`code-preview-tab-${view}`}
                                 aria-selected={activeView === view}
                                 aria-controls="code-preview-panel"
-                                disabled={view === 'preview' && activeView !== 'preview'}
                                 onClick={() => view === 'code' ? replay() : setActiveView(view)}
                                 className={`border-b-2 px-3 py-2 text-xs font-medium transition-colors ${
                                     activeView === view
                                         ? 'border-teal-400 text-white'
-                                        : 'border-transparent text-neutral-500 hover:text-neutral-300 disabled:cursor-not-allowed disabled:hover:text-neutral-500'
+                                        : 'border-transparent text-neutral-500 hover:text-neutral-300'
                                 }`}
                             >
                                 {view === 'preview' ? 'Live Preview' : 'Code'}
@@ -149,7 +148,7 @@ export default function CodePreviewCard() {
                 className={`flex min-h-[390px] items-center justify-center ${
                     activeView === 'code'
                         ? 'overflow-x-auto bg-neutral-950 px-4 py-5 sm:px-6'
-                        : 'bg-neutral-900 p-6 sm:p-8'
+                        : 'bg-[#e8eeeb] p-6 sm:p-8'
                 } transition-colors duration-700`}
             >
                 {activeView === 'code' ? (

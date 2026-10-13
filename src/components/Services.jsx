@@ -81,29 +81,29 @@ export default function ServicesPage() {
         <main className="min-h-screen bg-white font-geist text-[#0a0f1e] selection:bg-[#2dd4bf]/20">
             <section className="bg-[#f6f7f5] px-6 py-20 md:px-12 md:py-28">
                 <div className="mx-auto max-w-7xl">
-                    <p className="mb-6 font-mono text-[10px] font-bold uppercase tracking-[0.35em] text-[#11998e]">
-                        // What we do
+                    <p className="mb-6 font-mono text-[10px] font-bold uppercase tracking-[0.25em] text-[#11998e]">
+                        Ommitech · Kumasi, Ghana
                     </p>
                     <div className="grid gap-8 md:grid-cols-[1.2fr_0.8fr] md:items-end">
                         <h1 className="max-w-4xl text-5xl font-bold leading-[0.98] tracking-[-0.05em] md:text-7xl">
-                            Digital work built around <span className="text-[#0a0f1e]/35">real goals.</span>
+                            Websites, design, and skills for what comes next.
                         </h1>
                         <div className="max-w-lg md:justify-self-end">
                             <p className="text-base leading-7 text-[#0a0f1e]/65 md:text-lg">
-                                From websites and product experiences to brand identities, custom Photoshop designs, and practical training, we help people turn ideas into useful digital work.
+                                We build websites and interfaces, create brand and Photoshop designs, and teach web development and UI/UX through hands-on practice.
                             </p>
                             <a
                                 href="#service-list"
                                 className="mt-6 inline-flex items-center gap-3 text-xs font-bold uppercase tracking-widest text-[#0a0f1e] transition-colors hover:text-[#11998e]"
                             >
-                                Explore our services <span aria-hidden="true" className="text-[#11998e]">↓</span>
+                                See what we do <span aria-hidden="true" className="text-[#11998e]">↓</span>
                             </a>
                         </div>
                     </div>
                     <div className="mt-14 h-px w-full bg-[#0a0f1e]/10 md:mt-20" />
                     <div className="mt-5 flex items-center justify-between font-mono text-[9px] uppercase tracking-[0.22em] text-[#0a0f1e]/40">
-                        <span>Design / Build / Grow</span>
-                        <span>Kumasi, Ghana</span>
+                        <span>Web · UI/UX · Visual design · Training</span>
+                        <span>Work with Ommitech</span>
                     </div>
                 </div>
             </section>
@@ -112,10 +112,10 @@ export default function ServicesPage() {
                 <div className="mx-auto max-w-7xl">
                     <header className="mb-12 max-w-2xl">
                         <p className="mb-4 font-mono text-[10px] font-bold uppercase tracking-[0.35em] text-[#11998e]">
-                            // Services
+                            What we can help with
                         </p>
                         <h2 className="text-3xl font-bold leading-tight tracking-tight md:text-5xl">
-                            The right support for your next step.
+                            Pick a place to start.
                         </h2>
                     </header>
 
@@ -123,7 +123,7 @@ export default function ServicesPage() {
                         {services.map((service) => (
                             <article
                                 key={service.number}
-                                className="flex min-h-full flex-col border border-[#0a0f1e]/10 p-7 transition-colors duration-300 hover:border-[#2dd4bf] sm:p-9"
+                                className="flex min-h-full flex-col border border-[#0a0f1e]/10 p-7 transition-colors duration-300 hover:border-[#11998e] sm:p-9"
                             >
                                 <span className="font-mono text-[10px] font-bold tracking-[0.2em] text-[#11998e]">
                                     {service.number}
@@ -156,13 +156,13 @@ export default function ServicesPage() {
                     <div className="grid gap-12 md:grid-cols-[0.8fr_1.2fr] md:gap-20">
                         <div>
                             <p className="mb-5 font-mono text-[10px] font-bold uppercase tracking-[0.35em] text-[#2dd4bf]">
-                                // How we work
+                                How a project takes shape
                             </p>
                             <h2 className="text-3xl font-bold leading-tight tracking-tight md:text-4xl">
-                                A clear path from idea to outcome.
+                                First we talk. Then we make a plan.
                             </h2>
                             <p className="mt-5 max-w-md text-sm leading-7 text-white/60">
-                                Every project starts with understanding what you need, then finding a practical way to make it happen.
+                                We start with a conversation about what you need, agree on a sensible scope, and keep you involved as the work takes shape.
                             </p>
                         </div>
                         <div className="divide-y divide-white/15 border-y border-white/15">
@@ -186,13 +186,13 @@ export default function ServicesPage() {
                 <div className="mx-auto flex max-w-7xl flex-col gap-8 border border-[#0a0f1e]/10 p-8 sm:p-10 md:flex-row md:items-center md:justify-between md:p-12">
                     <div className="max-w-2xl">
                         <p className="mb-3 font-mono text-[10px] font-bold uppercase tracking-[0.3em] text-[#11998e]">
-                            Your next step
+                            Start a conversation
                         </p>
                         <h2 className="text-2xl font-bold tracking-tight md:text-3xl">
-                            Have a project in mind?
+                            What are you looking to make?
                         </h2>
                         <p className="mt-3 text-sm leading-6 text-[#0a0f1e]/60">
-                            Tell us what you are looking to create, and we can talk through a good way to get started.
+                            Share a little about your project or what you want to learn. We’ll take it from there.
                         </p>
                     </div>
                     <Link

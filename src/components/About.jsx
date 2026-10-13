@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import founderAvatar from '../assets/images/meshack.webp';
 import sheilaAvatar from '../assets/images/sheila.webp';
 
@@ -10,7 +11,7 @@ const leadership = [
         role: "Founder",
         title: "Chief Executive Officer",
         label: "CEO",
-        description: "Leads the company vision, business direction, and strategic partnerships while setting the long-term roadmap for growth and impact."
+        description: "Guides Ommitech's direction and works with clients and partners to shape the next project."
     },
     {
         name: "Sheila Xornam Adanyah",
@@ -20,7 +21,7 @@ const leadership = [
         role: "Secretary",
         title: "Head of UI/UX Design",
         label: "Secretary • UI/UX Lead",
-        description: "Leads design direction, user-centered experiences, and operational support to ensure the brand delivers both clarity and confidence."
+        description: "Leads UI/UX design, helping turn early ideas into clear user journeys and usable screens."
     }
 ];
 
@@ -29,18 +30,22 @@ export default function AboutPage() {
         <div className="min-h-screen bg-white px-6 py-24 font-geist text-[#0a0f1e] selection:bg-[#2dd4bf]/20">
             <div className="max-w-[1200px] mx-auto">
 
-                {/* Header: Centered & Minimal */}
-                <header className="mb-32 flex flex-col items-center text-center">
-                    <h1 className="text-5xl md:text-7xl font-bold tracking-tighter leading-none mb-6">
-                        Excellence Engineered
+                <header className="mb-24 max-w-4xl border-b border-[#0a0f1e]/10 pb-12 md:mb-28 md:pb-16">
+                    <p className="mb-5 font-mono text-[10px] font-bold uppercase tracking-[0.25em] text-[#11998e]">
+                        Ommitech · Kumasi, Ghana
+                    </p>
+                    <h1 className="text-5xl md:text-7xl font-bold tracking-tighter leading-[0.98] mb-6">
+                        A small team for thoughtful digital work.
                     </h1>
-                    <div className="h-[1px] w-24 bg-[#2dd4bf]"></div>
+                    <p className="max-w-2xl text-base leading-7 text-[#0a0f1e]/60 md:text-lg">
+                        We build websites, design digital products and brands, and share what we know with people learning the craft.
+                    </p>
                 </header>
 
                 {/* Leadership Team */}
                 <div className="mb-32">
                     <p className="text-[10px] font-mono uppercase tracking-[0.4em] text-[#0a0f1e]/40 mb-10">
-                        // Our Leadership
+                        The people you’ll work with
                     </p>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         {leadership.map((member, i) => (
@@ -81,22 +86,17 @@ export default function AboutPage() {
                     {/* Left Side: The "Mission" */}
                     <div className="lg:col-span-7">
                         <p className="text-[10px] font-mono uppercase tracking-[0.4em] text-[#0a0f1e]/40 mb-8">
-                            // Our Philosophy
+                            What we believe
                         </p>
                         <h2 className="text-3xl md:text-4xl font-bold tracking-tight leading-[1.1] mb-10">
-                            We don't just design interfaces; <br />
-                            <span className="text-[#0a0f1e]/30 italic">we engineer experiences.</span>
+                            Good digital work starts with listening.
                         </h2>
                         <div className="space-y-6 text-base text-[#0a0f1e]/60 leading-relaxed font-normal max-w-xl">
                             <p>
-                                Based on technical rigor and strategic intentionality, we specialize in
-                                bridging the gap between complex front-end engineering and high-fidelity
-                                UI design.
+                                Before we design or build, we want to understand who the work is for and what it needs to do. That keeps the decisions practical and the finished work clear.
                             </p>
                             <p>
-                                Whether you're building a product, scaling a brand, or learning the craft,
-                                our goal is to help people create digital experiences that are both polished
-                                and practical, while also teaching the skills behind them.
+                                Ommitech brings web development, UI/UX, brand identity, and Photoshop design together with hands-on training for people who want to learn those skills.
                             </p>
                         </div>
                     </div>
@@ -104,7 +104,7 @@ export default function AboutPage() {
                     {/* Right Side: Technical Specs / Capabilities */}
                     <div className="lg:col-span-5 border border-[#0a0f1e]/10 p-10 rounded-sm bg-[#fafafa]">
                         <p className="text-[10px] font-mono uppercase tracking-[0.4em] text-[#2dd4bf] font-bold mb-8">
-                            Technical Stack
+                            What we work on
                         </p>
                         <ul className="space-y-6">
                             {[
@@ -122,24 +122,21 @@ export default function AboutPage() {
                     </div>
                 </div>
 
-                {/* Footer: Re-integrated structured block */}
-                <div className="mt-32 border border-[#0a0f1e]/10 bg-white rounded-2xl p-10 md:p-16 flex flex-col md:flex-row md:items-center justify-between gap-8 transition-colors hover:border-[#0a0f1e]">
+                <div className="mt-32 border border-[#0a0f1e]/10 bg-white p-10 md:p-16 flex flex-col md:flex-row md:items-center justify-between gap-8 transition-colors hover:border-[#11998e]">
                     <div>
                         <h3 className="text-2xl md:text-3xl font-bold text-[#0a0f1e] mb-2 tracking-tight">
-                            Ready to build or learn?
+                            Have a project or a question about training?
                         </h3>
-                        <p className="text-sm font-mono uppercase tracking-widest text-[#0a0f1e]/40">
-                            Let's turn your idea into a product or your interest into skills.
+                        <p className="text-sm leading-6 text-[#0a0f1e]/55">
+                            Tell us what you have in mind and we’ll talk through the next step.
                         </p>
                     </div>
-                    <a
-                        href="#"
-                        target="_blank"
-                        rel="noreferrer"
-                        className="inline-block bg-[#0a0f1e] text-white text-xs font-bold uppercase tracking-widest px-10 py-5 rounded-full hover:bg-[#2dd4bf] hover:text-[#0a0f1e] transition-all duration-300 text-center shadow-lg shadow-[#0a0f1e]/5"
+                    <Link
+                        to="/#contact"
+                        className="inline-flex items-center justify-center bg-[#0a0f1e] text-white text-xs font-bold uppercase tracking-widest px-8 py-4 hover:bg-[#2dd4bf] hover:text-[#0a0f1e] transition-colors duration-300 text-center"
                     >
-                        Get in touch &rarr;
-                    </a>
+                        Get in touch <span aria-hidden="true" className="ml-3">→</span>
+                    </Link>
                 </div>
 
             </div>

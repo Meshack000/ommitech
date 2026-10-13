@@ -11,7 +11,7 @@ function Footer() {
                             <img src="/Logo/logo.svg" alt="Ommitech" className="h-8 w-auto object-contain brightness-0 invert" />
                         </Link>
                         <p className="max-w-sm text-sm leading-7 text-white/60">
-                            We build practical digital solutions and teach the skills behind them—from web development to UI/UX design.
+                            Ommitech is a digital studio in Kumasi. We build websites, design brands and interfaces, and teach web development and UI/UX.
                         </p>
                     </div>
 
@@ -40,7 +40,7 @@ function Footer() {
                             Kumasi, Ghana
                         </p>
                         <p className="mt-3 text-sm leading-7 text-white/60">
-                            Building digital solutions and skills from Kumasi.
+                            Local perspective. Work for the web.
                         </p>
                     </div>
 
@@ -85,7 +85,7 @@ function Footer() {
 
                 <div className="flex flex-col gap-3 pt-6 text-xs text-white/40 sm:flex-row sm:items-center sm:justify-between">
                     <p>© {new Date().getFullYear()} Ommitech. All rights reserved.</p>
-                    <p>Built with purpose in Kumasi, Ghana.</p>
+                    <p>Ommitech · Kumasi, Ghana</p>
                 </div>
             </div>
         </footer>
