@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import gcbMobileBanking from '../assets/images/gcb-mobile-banking.webp';
+import { StopwatchWidget } from './widgets/stopwatch-widget';
 
 const services = [
     {
@@ -341,6 +342,25 @@ export default function RecentFeatures() {
                             </article>
                         ))}
                     </div>
+
+                    <section className="mt-16 bg-[#f6f7f5] p-6 sm:p-8 md:mt-20 md:p-10">
+                        <div className="mx-auto grid max-w-5xl items-center gap-10 rounded-3xl border border-[#0a0f1e]/5 bg-white p-7 shadow-sm sm:p-10 md:grid-cols-[1fr_auto] md:gap-16 md:p-12">
+                            <div className="max-w-xl">
+                                <p className="mb-3 font-mono text-[10px] font-bold uppercase tracking-[0.3em] text-teal-600">
+                                    A moment to focus
+                                </p>
+                                <h3 className="text-3xl font-bold tracking-tight text-slate-950 md:text-4xl">
+                                    Make time for what matters.
+                                </h3>
+                                <p className="mt-4 text-base leading-7 text-slate-600">
+                                    Take a quick focus break with this simple stopwatch. Start, pause, or reset whenever you need.
+                                </p>
+                            </div>
+                            <div className="flex justify-center md:justify-end">
+                                <StopwatchWidget />
+                            </div>
+                        </div>
+                    </section>
                 </section>
 
                 <section className="py-20 md:py-24">
