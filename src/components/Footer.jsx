@@ -5,7 +5,7 @@ function Footer() {
     return (
         <footer id="contact" className="scroll-mt-24 bg-[#0a0f1e] text-white">
             <div className="mx-auto max-w-7xl px-6 py-16 md:px-12 md:py-20">
-                <div className="grid gap-12 border-b border-white/10 pb-12 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1fr_1fr] lg:gap-10">
+                <div className="grid gap-12 border-b border-white/10 pb-12 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1fr_1.2fr_1fr] lg:gap-10">
                     <div>
                         <Link to="/" className="mb-5 inline-flex items-center gap-3 transition-opacity hover:opacity-80">
                             <img src="/Logo/logo.svg" alt="Ommitech" className="h-8 w-auto object-contain brightness-0 invert" />
@@ -41,6 +41,14 @@ function Footer() {
                         <p className="mt-3 text-sm leading-7 text-white/60">
                             Building digital solutions and skills from Kumasi.
                         </p>
+                    </div>
+
+                    <div>
+                        <h2 className="mb-5 text-xs font-bold uppercase tracking-[0.2em] text-white">Call us</h2>
+                        <ul className="space-y-3 text-sm text-white/60">
+                            <li><a href="tel:+233509266651" className="transition-colors hover:text-[#2dd4bf]">0509 266 651</a></li>
+                            <li><a href="tel:+233240221242" className="transition-colors hover:text-[#2dd4bf]">0240 221 242</a></li>
+                        </ul>
                     </div>
 
                     <div>

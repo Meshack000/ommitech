@@ -44,7 +44,7 @@ const workItems = [
         title: "GCB Mobile Banking",
         category: "UI/UX Design",
         image: gcbMobileBanking,
-        href: null,
+        href: "https://www.behance.net/gallery/248454041/GCB-Mobile-Banking-App-UIUX-Redesign-Case-Study",
         tag: "Mobile Banking App",
         description: "A mobile banking experience concept featuring secure sign-in, biometric access, and everyday account tools.",
         result: "Designed a clear, mobile-first banking experience",
