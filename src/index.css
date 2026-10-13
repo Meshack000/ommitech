@@ -16,6 +16,22 @@ select {
   font-family: inherit;
 }
 
+@keyframes hero-slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(-48px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.hero-slide-in {
+  animation: hero-slide-in 1400ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
 @keyframes phone-preview-enter {
   from {
     opacity: 0;
