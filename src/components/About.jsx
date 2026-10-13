@@ -109,7 +109,7 @@ export default function AboutPage() {
                         <ul className="space-y-6">
                             {[
                                 { label: "Frameworks", value: "React / Tailwind / Next.js" },
-                                { label: "Design", value: "UI/UX / Logo Design / Branding" },
+                                { label: "Design", value: "UI/UX / Brand Identity / Photoshop Design" },
                                 { label: "Training", value: "Web Development & UI/UX Learning" },
                                 { label: "Solutions", value: "End-to-End Website Delivery" }
                             ].map((item, i) => (

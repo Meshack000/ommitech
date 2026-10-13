@@ -26,7 +26,7 @@ function Navbar() {
 
                     <ul className="hidden items-center gap-5 text-sm font-medium md:flex lg:gap-8">
                         <li><Link to="/" className="transition-colors hover:text-[#14b8a6]">Home</Link></li>
-                        <li><a href="/#services" className="transition-colors hover:text-[#14b8a6]">Services</a></li>
+                        <li><Link to="/services" className="transition-colors hover:text-[#14b8a6]">Services</Link></li>
                         <li><a href="/#work" className="transition-colors hover:text-[#14b8a6]">Work</a></li>
                         <li><a href="/#training" className="transition-colors hover:text-[#14b8a6]">Training</a></li>
                         <li><Link to="/about" className="transition-colors hover:text-[#14b8a6]">About</Link></li>
@@ -56,7 +56,7 @@ function Navbar() {
                         <div id="mobile-navigation" className="absolute left-0 top-[72px] w-full border-b border-[#0a0f1e]/10 bg-white p-6 shadow-lg md:hidden">
                             <ul className="flex flex-col gap-5 text-base font-medium">
                                 <li><Link to="/" onClick={closeMenu} className="block transition-colors hover:text-[#14b8a6]">Home</Link></li>
-                                <li><a href="/#services" onClick={closeMenu} className="block transition-colors hover:text-[#14b8a6]">Services</a></li>
+                                <li><Link to="/services" onClick={closeMenu} className="block transition-colors hover:text-[#14b8a6]">Services</Link></li>
                                 <li><a href="/#work" onClick={closeMenu} className="block transition-colors hover:text-[#14b8a6]">Work</a></li>
                                 <li><a href="/#training" onClick={closeMenu} className="block transition-colors hover:text-[#14b8a6]">Training</a></li>
                                 <li><Link to="/about" onClick={closeMenu} className="block transition-colors hover:text-[#14b8a6]">About</Link></li>

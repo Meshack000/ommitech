@@ -17,6 +17,11 @@ const services = [
         number: "03",
         title: "Brand Identity",
         description: "Distinctive visual identities that help businesses communicate consistently and stand out."
+    },
+    {
+        number: "04",
+        title: "Photoshop Designing",
+        description: "Custom graphics and polished visual assets designed in Photoshop to help your brand communicate clearly and stand out."
     }
 ];
 

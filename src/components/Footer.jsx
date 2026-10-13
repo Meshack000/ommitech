@@ -19,7 +19,7 @@ function Footer() {
                         <h2 className="mb-5 text-xs font-bold uppercase tracking-[0.2em] text-white">Explore</h2>
                         <ul className="space-y-3 text-sm text-white/60">
                             <li><Link to="/" className="transition-colors hover:text-[#2dd4bf]">Home</Link></li>
-                            <li><a href="/#services" className="transition-colors hover:text-[#2dd4bf]">Services</a></li>
+                            <li><Link to="/services" className="transition-colors hover:text-[#2dd4bf]">Services</Link></li>
                             <li><Link to="/about" className="transition-colors hover:text-[#2dd4bf]">About us</Link></li>
                         </ul>
                     </div>
@@ -27,8 +27,9 @@ function Footer() {
                     <div>
                         <h2 className="mb-5 text-xs font-bold uppercase tracking-[0.2em] text-white">What we do</h2>
                         <ul className="space-y-3 text-sm text-white/60">
-                            <li><a href="/#services" className="transition-colors hover:text-[#2dd4bf]">Web development</a></li>
-                            <li><a href="/#services" className="transition-colors hover:text-[#2dd4bf]">UI/UX design</a></li>
+                            <li><Link to="/services" className="transition-colors hover:text-[#2dd4bf]">Web development</Link></li>
+                            <li><Link to="/services" className="transition-colors hover:text-[#2dd4bf]">UI/UX design</Link></li>
+                            <li><Link to="/services" className="transition-colors hover:text-[#2dd4bf]">Photoshop designing</Link></li>
                             <li><a href="/#training" className="transition-colors hover:text-[#2dd4bf]">Training & mentorship</a></li>
                         </ul>
                     </div>

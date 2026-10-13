@@ -5,6 +5,7 @@ import Footer from './components/Footer'
 import RecentFeatures from './components/Feature'
 import AboutPage from './components/About'
 import CodePreviewCard from './components/CodePreviewCard'
+import ServicesPage from './components/Services'
 
 function Home() {
   return (
@@ -36,6 +37,7 @@ function App() {
 
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/services" element={<ServicesPage />} />
           <Route path="/about" element={<AboutPage />} />
         </Routes>
 

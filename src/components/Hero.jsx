@@ -49,7 +49,7 @@ export default function Hero() {
 
                     <div className="hero-slide-in mt-10 flex w-full flex-col items-stretch gap-4 sm:w-auto sm:flex-row sm:items-center" style={{ animationDelay: "1850ms" }}>
                         <a
-                            href="/#services"
+                            href="/services"
                             className="inline-flex items-center justify-center bg-[#0a0f1e] text-white text-xs font-bold uppercase tracking-widest px-8 py-4 hover:bg-[#2dd4bf] hover:text-[#0a0f1e] transition-colors duration-300"
                         >
                             Explore services
