@@ -1,9 +1,12 @@
 import React from 'react';
+import founderAvatar from '../assets/images/meshack.webp';
+import sheilaAvatar from '../assets/images/sheila.webp';
 
 const leadership = [
     {
         name: "Oppong Mpiani Meshack",
         initials: "OM",
+        avatar: founderAvatar,
         role: "Founder",
         title: "Chief Executive Officer",
         label: "CEO",
@@ -12,6 +15,8 @@ const leadership = [
     {
         name: "Sheila Xornam Adanyah",
         initials: "SA",
+        avatar: sheilaAvatar,
+        avatarPosition: "object-[center_32%]",
         role: "Secretary",
         title: "Head of UI/UX Design",
         label: "Secretary • UI/UX Lead",
@@ -41,8 +46,18 @@ export default function AboutPage() {
                         {leadership.map((member, i) => (
                             <div key={i} className="border border-[#0a0f1e]/10 bg-[#fafafa] p-8 rounded-sm shadow-sm hover:shadow-md transition-shadow duration-300">
                                 <div className="flex items-center justify-between gap-4 mb-6">
-                                    <div className="w-24 h-24 rounded-full bg-[#2dd4bf]/15 text-[#0a0f1e] flex items-center justify-center text-2xl font-bold border border-[#0a0f1e]/5">
-                                        {member.initials}
+                                    <div className="w-24 h-24 overflow-hidden rounded-full border border-[#0a0f1e]/5 bg-[#2dd4bf]/15 text-[#0a0f1e] flex items-center justify-center text-2xl font-bold">
+                                        {member.avatar ? (
+                                            <img
+                                                src={member.avatar}
+                                                alt={`${member.name}, ${member.role}`}
+                                                className={`h-full w-full scale-125 object-cover ${member.avatarPosition || 'object-center'}`}
+                                                width="96"
+                                                height="96"
+                                                loading="lazy"
+                                                decoding="async"
+                                            />
+                                        ) : member.initials}
                                     </div>
                                     <div className="bg-[#0a0f1e] text-white px-4 py-2 rounded-full text-[10px] font-mono uppercase tracking-[0.3em] font-bold">
                                         {member.label}
@@ -59,7 +74,6 @@ export default function AboutPage() {
                         ))}
                     </div>
                 </div>
-
 
                 {/* Main Content: Two Column Editorial Layout */}
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-start mb-32">
