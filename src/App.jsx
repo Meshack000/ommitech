@@ -33,15 +33,55 @@ function Home() {
 function SiteMetadata() {
   const { pathname } = useLocation()
 
+  const routeMeta = {
+    '/': {
+      title: 'Ommitech | IT Company in Ghana, UI/UX & Website Design in Kumasi',
+      description:
+        'Ommitech is a trusted IT company in Ghana and UI/UX company in Kumasi offering frontend development, website design, Photoshop design, and practical tech training.',
+      keywords:
+        'IT company in Ghana, IT companies in Ghana, UI UX company in Ghana, UI UX companies in Ghana, website design company in Kumasi, frontend development Ghana, website development Kumasi, Photoshop design Ghana, web design Ghana, web developer Ghana, UI UX design Kumasi, Ommitech',
+    },
+    '/services': {
+      title: 'Web Design, Frontend Development & Photoshop Design Services in Ghana',
+      description:
+        'Ommitech delivers website design, frontend development, UI/UX design, Photoshop design, and digital training services for businesses in Ghana and Kumasi.',
+      keywords:
+        'website design Ghana, frontend development Ghana, web developer Kumasi, UI UX design Ghana, Photoshop design Ghana, graphic design Kumasi, digital agency Ghana, website company in Kumasi',
+    },
+    '/about': {
+      title: 'About Ommitech | IT Company, UI/UX Studio & Training Team in Kumasi, Ghana',
+      description:
+        'Learn about Ommitech, a growing IT company and UI/UX studio in Kumasi, Ghana that builds websites, digital products, and practical tech training.',
+      keywords:
+        'about Ommitech, IT company Kumasi, UI UX company Kumasi, Ghana digital studio, web design company Ghana, Kumasi technology company',
+    },
+  }
+
   useEffect(() => {
     const pagePath = pathname === '/' ? '/' : pathname.replace(/\/+$/, '')
     const url = new URL(pagePath, 'https://ommitech.co').href
+    const meta = routeMeta[pagePath] || routeMeta['/']
+
+    document.title = meta.title
+
+    const description = document.querySelector('meta[name="description"]')
+    const keywords = document.querySelector('meta[name="keywords"]')
     const canonical = document.querySelector('link[rel="canonical"]')
-    const openGraphUrl = document.querySelector('meta[property="og:url"]')
+    const ogTitle = document.querySelector('meta[property="og:title"]')
+    const ogDescription = document.querySelector('meta[property="og:description"]')
+    const ogUrl = document.querySelector('meta[property="og:url"]')
+    const twitterTitle = document.querySelector('meta[name="twitter:title"]')
+    const twitterDescription = document.querySelector('meta[name="twitter:description"]')
     const twitterUrl = document.querySelector('meta[name="twitter:url"]')
 
+    description?.setAttribute('content', meta.description)
+    keywords?.setAttribute('content', meta.keywords)
     canonical?.setAttribute('href', url)
-    openGraphUrl?.setAttribute('content', url)
+    ogTitle?.setAttribute('content', meta.title)
+    ogDescription?.setAttribute('content', meta.description)
+    ogUrl?.setAttribute('content', url)
+    twitterTitle?.setAttribute('content', meta.title)
+    twitterDescription?.setAttribute('content', meta.description)
     twitterUrl?.setAttribute('content', url)
   }, [pathname])
 

@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
+Host: ommitech.co
 Sitemap: https://ommitech.co/sitemap.xml

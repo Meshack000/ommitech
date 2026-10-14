@@ -35,10 +35,10 @@ export default function AboutPage() {
                         Ommitech · Kumasi, Ghana
                     </p>
                     <h1 className="text-5xl md:text-7xl font-bold tracking-tighter leading-[0.98] mb-6">
-                        A small team for thoughtful digital work.
+                        A dependable IT company and UI/UX studio in Kumasi, Ghana.
                     </h1>
                     <p className="max-w-2xl text-base leading-7 text-[#0a0f1e]/60 md:text-lg">
-                        We build websites, design digital products and brands, and share what we know with people learning the craft.
+                        Ommitech is a growing IT company in Ghana building websites, digital products, brands, and practical training for people who want to learn real-world web and design skills.
                     </p>
                 </header>
 

@@ -86,11 +86,11 @@ export default function ServicesPage() {
                     </p>
                     <div className="grid gap-8 md:grid-cols-[1.2fr_0.8fr] md:items-end">
                         <h1 className="max-w-4xl text-5xl font-bold leading-[0.98] tracking-[-0.05em] md:text-7xl">
-                            Websites, design, and skills for what comes next.
+                            Frontend development, website design, UI/UX, and Photoshop services in Kumasi, Ghana.
                         </h1>
                         <div className="max-w-lg md:justify-self-end">
                             <p className="text-base leading-7 text-[#0a0f1e]/65 md:text-lg">
-                                We build websites and interfaces, create brand and Photoshop designs, and teach web development and UI/UX through hands-on practice.
+                                Ommitech is a practical web design and frontend development company in Ghana helping businesses and learners with custom websites, UI/UX design, Photoshop design, and digital skills training.
                             </p>
                             <a
                                 href="#service-list"

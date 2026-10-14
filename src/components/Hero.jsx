@@ -25,7 +25,7 @@ export default function Hero() {
                 {/* Left — Content */}
                 <div className="flex flex-col items-center text-center lg:-translate-y-8 lg:items-start lg:text-left">
                     <p className="hero-slide-in font-mono text-[10px] uppercase tracking-[0.4em] text-[#2dd4bf] font-bold mb-6">
-                        Digital solutions · Practical training
+                        IT company in Ghana · UI/UX company in Kumasi
                     </p>
 
                     <h1 className="max-w-xl text-4xl font-bold leading-[1.05] tracking-tighter md:text-6xl">
@@ -39,12 +39,12 @@ export default function Hero() {
                             </span>
                         </span>
                         <span className="hero-slide-in mt-2 block text-[#2dd4bf]" style={{ animationDelay: "850ms" }}>
-                            You grow with us.
+                            Website design, frontend and digital growth.
                         </span>
                     </h1>
 
                     <p className="hero-slide-in mt-6 max-w-[480px] text-base leading-relaxed text-[#0a0f1e]/60 md:text-lg" style={{ animationDelay: "1350ms" }}>
-                        Web, design, and practical tech training.
+                        We are a web design and frontend development company in Ghana helping businesses and learners with websites, UI/UX design, Photoshop design, and practical tech training in Kumasi.
                     </p>
 
                     <div className="hero-slide-in mt-10 flex w-full flex-col items-stretch gap-4 sm:w-auto sm:flex-row sm:items-center" style={{ animationDelay: "1850ms" }}>
