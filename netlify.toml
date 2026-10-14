@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "https://ommitech.netlify.app/*"
+  to = "https://ommiteck.com/:splat"
+  status = 301
+  force = true

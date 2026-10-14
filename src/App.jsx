@@ -1,4 +1,5 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { useEffect } from 'react'
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Footer from './components/Footer'
@@ -29,10 +30,29 @@ function Home() {
   )
 }
 
+function SiteMetadata() {
+  const { pathname } = useLocation()
+
+  useEffect(() => {
+    const pagePath = pathname === '/' ? '/' : pathname.replace(/\/+$/, '')
+    const url = new URL(pagePath, 'https://ommiteck.com').href
+    const canonical = document.querySelector('link[rel="canonical"]')
+    const openGraphUrl = document.querySelector('meta[property="og:url"]')
+    const twitterUrl = document.querySelector('meta[name="twitter:url"]')
+
+    canonical?.setAttribute('href', url)
+    openGraphUrl?.setAttribute('content', url)
+    twitterUrl?.setAttribute('content', url)
+  }, [pathname])
+
+  return null
+}
+
 function App() {
   return (
     <Router>
       <>
+        <SiteMetadata />
         <Navbar />
 
         <Routes>
