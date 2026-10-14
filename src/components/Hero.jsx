@@ -62,6 +62,15 @@ export default function Hero() {
                         </a>
                     </div>
 
+                    <a
+                        href="mailto:hello@ommitech.co"
+                        className="hero-slide-in mt-5 inline-flex items-center gap-2 text-sm font-medium text-[#0a0f1e]/70 transition-colors hover:text-[#2dd4bf]"
+                        style={{ animationDelay: "2150ms" }}
+                    >
+                        <span aria-hidden="true">✉</span>
+                        <span>hello@ommitech.co</span>
+                    </a>
+
                 </div>
 
                 {/* Right — Single phone visual */}

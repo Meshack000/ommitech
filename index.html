@@ -42,10 +42,34 @@
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "Ommitech",
-      "alternateName": "Ommitech Creative Studio",
-      "url": "https://ommitech.co/"
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://ommitech.co/#website",
+          "name": "Ommitech",
+          "alternateName": "Ommitech Creative Studio",
+          "url": "https://ommitech.co/"
+        },
+        {
+          "@type": "ProfessionalService",
+          "@id": "https://ommitech.co/#business",
+          "name": "Ommitech Creative Studio",
+          "url": "https://ommitech.co/",
+          "logo": "https://ommitech.co/Logo/Layer%200.png",
+          "image": "https://ommitech.co/Logo/Layer%200.png",
+          "description": "Web development, UI/UX design, graphic design and practical tech training for businesses in Ghana.",
+          "areaServed": "Ghana",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Kumasi",
+            "addressCountry": "GH"
+          },
+          "sameAs": [
+            "https://www.instagram.com/ommitech_/",
+            "https://www.linkedin.com/company/ommitech/?viewAsMember=true"
+          ]
+        }
+      ]
     }
   </script>
 </head>

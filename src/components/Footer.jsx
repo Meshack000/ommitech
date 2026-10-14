@@ -45,8 +45,9 @@ function Footer() {
                     </div>
 
                     <div>
-                        <h2 className="mb-5 text-xs font-bold uppercase tracking-[0.2em] text-white">Call us</h2>
+                        <h2 className="mb-5 text-xs font-bold uppercase tracking-[0.2em] text-white">Contact</h2>
                         <ul className="space-y-3 text-sm text-white/60">
+                            <li><a href="mailto:hello@ommitech.co" className="transition-colors hover:text-[#2dd4bf]">hello@ommitech.co</a></li>
                             <li><a href="tel:+233509266651" className="transition-colors hover:text-[#2dd4bf]">0509 266 651</a></li>
                             <li><a href="tel:+233240221242" className="transition-colors hover:text-[#2dd4bf]">0240 221 242</a></li>
                         </ul>
