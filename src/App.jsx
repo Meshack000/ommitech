@@ -35,7 +35,7 @@ function SiteMetadata() {
 
   useEffect(() => {
     const pagePath = pathname === '/' ? '/' : pathname.replace(/\/+$/, '')
-    const url = new URL(pagePath, 'https://ommiteck.com').href
+    const url = new URL(pagePath, 'https://ommitech.co').href
     const canonical = document.querySelector('link[rel="canonical"]')
     const openGraphUrl = document.querySelector('meta[property="og:url"]')
     const twitterUrl = document.querySelector('meta[name="twitter:url"]')
