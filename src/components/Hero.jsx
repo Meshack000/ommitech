@@ -2,9 +2,9 @@ import { useEffect, useState } from "react"
 import heroPhoneComposition from "../assets/images/hero-phone-composition.webp"
 
 const heroMessages = [
-    "We build digital.",
-    "We teach web development.",
-    "We teach UI/UX design.",
+    "We build websites.",
+    "We design better digital experiences.",
+    "We teach practical tech skills.",
 ]
 
 export default function Hero() {
@@ -25,11 +25,11 @@ export default function Hero() {
                 {/* Left — Content */}
                 <div className="flex flex-col items-center text-center lg:-translate-y-8 lg:items-start lg:text-left">
                     <p className="hero-slide-in font-mono text-[10px] uppercase tracking-[0.4em] text-[#2dd4bf] font-bold mb-6">
-                        IT company in Ghana · UI/UX company in Kumasi
+                        IT company in Ghana · UI/UX studio in Kumasi
                     </p>
 
-                    <h1 className="max-w-xl text-4xl font-bold leading-[1.05] tracking-tighter md:text-6xl">
-                        <span className="block min-h-[2.1em]">
+                    <h1 className="max-w-[760px] text-4xl font-bold leading-[1.02] tracking-tighter md:text-6xl xl:text-[5.1rem]">
+                        <span className="block min-h-[1.2em]">
                             <span
                                 key={messageIndex}
                                 className="hero-slide-in block text-balance"
@@ -39,12 +39,12 @@ export default function Hero() {
                             </span>
                         </span>
                         <span className="hero-slide-in mt-2 block text-[#2dd4bf]" style={{ animationDelay: "850ms" }}>
-                            Website design, frontend and digital growth.
+                            Digital growth that feels clear.
                         </span>
                     </h1>
 
-                    <p className="hero-slide-in mt-6 max-w-[480px] text-base leading-relaxed text-[#0a0f1e]/60 md:text-lg" style={{ animationDelay: "1350ms" }}>
-                        We are a web design and frontend development company in Ghana helping businesses and learners with websites, UI/UX design, Photoshop design, and practical tech training in Kumasi.
+                    <p className="hero-slide-in mt-6 max-w-[520px] text-base leading-relaxed text-[#0a0f1e]/60 md:text-lg" style={{ animationDelay: "1350ms" }}>
+                        Web design, frontend development, Photoshop design, and practical tech training for businesses and learners in Ghana.
                     </p>
 
                     <div className="hero-slide-in mt-10 flex w-full flex-col items-stretch gap-4 sm:w-auto sm:flex-row sm:items-center" style={{ animationDelay: "1850ms" }}>
