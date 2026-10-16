@@ -10,12 +10,12 @@ function Navbar() {
         <div className="sticky top-0 z-50 w-full">
             <div className="flex min-h-9 w-full items-center justify-center gap-2 bg-[#0a0f1e] px-4 py-2 text-center text-xs text-white sm:gap-3">
                 <span>Interested in learning web development or UI/UX?</span>
-                <a
-                    href="/#training"
+                <Link
+                    to="/reserve-spot"
                     className="shrink-0 font-semibold text-[#2dd4bf] underline underline-offset-4 transition-colors hover:text-white"
                 >
-                    Let’s talk
-                </a>
+                    Reserve a spot
+                </Link>
             </div>
 
             <nav className="w-full border-b border-[#0a0f1e]/10 bg-white/95 text-[#0a0f1e] backdrop-blur">

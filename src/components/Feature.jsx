@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import gcbMobileBanking from '../assets/images/gcb-mobile-banking.webp';
 import { StopwatchWidget } from './widgets/stopwatch-widget';
 
@@ -252,14 +253,14 @@ export default function RecentFeatures() {
                                 Learn web development or UI/UX in a live online class, with practical projects and guidance along the way. Request a spot and we’ll reply with upcoming class times and details on how to join.
                             </p>
                             <div className="mt-8 flex flex-col items-start gap-4 sm:flex-row sm:items-center">
-                                <a
-                                    href="mailto:hello@ommitech.co?subject=Online%20class%20spot%20request&body=Hi%20Ommitech%2C%0A%0AI%E2%80%99d%20like%20to%20request%20a%20spot%20in%20an%20upcoming%20online%20class.%0A%0AName%3A%20%0ATopic%20(web%20development%20or%20UI%2FUX)%3A%20%0A%0APlease%20send%20me%20the%20upcoming%20class%20times%20and%20joining%20details.%0A%0AThank%20you!"
+                                <Link
+                                    to="/reserve-spot"
                                     className="inline-flex items-center justify-center gap-2 bg-[#2dd4bf] px-6 py-4 text-xs font-bold uppercase tracking-widest text-[#0a0f1e] transition-colors hover:bg-white"
                                 >
                                     Reserve your spot <span aria-hidden="true">→</span>
-                                </a>
+                                </Link>
                                 <span className="text-xs leading-5 text-white/50">
-                                    We’ll confirm the schedule and joining link by email.
+                                    Request a place in the next live online class.
                                 </span>
                             </div>
                         </div>
