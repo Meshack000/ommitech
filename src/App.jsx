@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useLayoutEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
@@ -29,6 +29,17 @@ function Home() {
      
     </>
   )
+}
+
+function ScrollToTop() {
+  const { pathname } = useLocation()
+
+  useLayoutEffect(() => {
+    window.history.scrollRestoration = 'manual'
+    window.scrollTo(0, 0)
+  }, [pathname])
+
+  return null
 }
 
 function SiteMetadata() {
@@ -99,6 +110,7 @@ function App() {
   return (
     <Router>
       <>
+        <ScrollToTop />
         <SiteMetadata />
         <Navbar />
 
