@@ -1,27 +1,60 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import founderAvatar from '../assets/images/meshack.webp';
-import sheilaAvatar from '../assets/images/sheila.webp';
 
 const leadership = [
     {
-        name: "Oppong Mpiani Meshack",
-        initials: "OM",
-        avatar: founderAvatar,
-        role: "Founder",
-        title: "Chief Executive Officer",
-        label: "CEO",
-        description: "Guides Ommitech's direction and works with clients and partners to shape the next project."
+        name: 'Board Chair',
+        initials: 'BC',
+        role: 'Strategy',
+        title: 'Leadership & Growth',
+        label: 'Board chair',
+        description: 'Shapes the company direction, keeps the vision clear, and aligns every project with long-term business goals.',
+        avatarGradient: 'linear-gradient(135deg, #0a0f1e 0%, #1a243b 35%, #2dd4bf 100%)'
     },
     {
-        name: "Sheila Xornam Adanyah",
-        initials: "SA",
-        avatar: sheilaAvatar,
-        avatarPosition: "object-[center_32%]",
-        role: "Secretary",
-        title: "Head of UI/UX Design",
-        label: "Secretary • UI/UX Lead",
-        description: "Leads UI/UX design, helping turn early ideas into clear user journeys and usable screens."
+        name: 'CEO',
+        initials: 'CE',
+        role: 'Executive',
+        title: 'Client Experience',
+        label: 'CEO',
+        description: 'Leads client partnerships and keeps product, design, and delivery working toward the same outcome.',
+        avatarGradient: 'linear-gradient(135deg, #0f172a 0%, #1d4ed8 35%, #67e8f9 100%)'
+    },
+    {
+        name: 'Design Lead',
+        initials: 'DL',
+        role: 'UI/UX',
+        title: 'User Experience',
+        label: 'Design',
+        description: 'Builds thoughtful interface systems, journeys, and screens that make digital products simple and intuitive.',
+        avatarGradient: 'linear-gradient(135deg, #1f2937 0%, #4f46e5 30%, #c084fc 100%)'
+    },
+    {
+        name: 'Product Manager',
+        initials: 'PM',
+        role: 'Planning',
+        title: 'Product Direction',
+        label: 'Product',
+        description: 'Translates business needs into clear plans, priorities, and practical roadmaps for digital projects.',
+        avatarGradient: 'linear-gradient(135deg, #144272 0%, #2dd4bf 50%, #d1fae5 100%)'
+    },
+    {
+        name: 'Engineering Lead',
+        initials: 'EL',
+        role: 'Web Systems',
+        title: 'Frontend Delivery',
+        label: 'Tech',
+        description: 'Builds responsive experiences and turns design ideas into reliable, polished web interfaces.',
+        avatarGradient: 'linear-gradient(135deg, #0f172a 0%, #0891b2 35%, #5eead4 100%)'
+    },
+    {
+        name: 'Operations',
+        initials: 'OP',
+        role: 'Support',
+        title: 'Delivery & Partnerships',
+        label: 'Ops',
+        description: 'Keeps schedules, communication, and project momentum running smoothly from kickoff to launch.',
+        avatarGradient: 'linear-gradient(135deg, #111827 0%, #f59e0b 35%, #fef3c7 100%)'
     }
 ];
 
@@ -42,45 +75,37 @@ export default function AboutPage() {
                     </p>
                 </header>
 
-                {/* Leadership Team */}
                 <div className="mb-32">
                     <p className="text-[10px] font-mono uppercase tracking-[0.4em] text-[#0a0f1e]/40 mb-10">
-                        The people you’ll work with
+                        The board behind the work
                     </p>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
                         {leadership.map((member, i) => (
-                            <div key={i} className="border border-[#0a0f1e]/10 bg-[#fafafa] p-8 rounded-sm shadow-sm hover:shadow-md transition-shadow duration-300">
-                                <div className="flex items-center justify-between gap-4 mb-6">
-                                    <div className="w-24 h-24 overflow-hidden rounded-full border border-[#0a0f1e]/5 bg-[#2dd4bf]/15 text-[#0a0f1e] flex items-center justify-center text-2xl font-bold">
-                                        {member.avatar ? (
-                                            <img
-                                                src={member.avatar}
-                                                alt={`${member.name}, ${member.role}`}
-                                                className={`h-full w-full scale-125 object-cover ${member.avatarPosition || 'object-center'}`}
-                                                width="96"
-                                                height="96"
-                                                loading="lazy"
-                                                decoding="async"
-                                            />
-                                        ) : member.initials}
+                            <div key={i} className="group border border-[#0a0f1e]/10 bg-[#fafafa] p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#11998e] hover:shadow-md">
+                                <div className="mb-6 flex items-center justify-between gap-4">
+                                    <div className="relative h-24 w-24 overflow-hidden rounded-[28px] border border-white/60 shadow-inner" style={{ background: member.avatarGradient }}>
+                                        <div className="absolute left-1/2 top-3 h-10 w-10 -translate-x-1/2 rounded-full border-4 border-white/80 bg-white/15" />
+                                        <div className="absolute inset-x-3 bottom-0 h-12 rounded-t-[20px] bg-white/15" />
+                                        <div className="absolute inset-x-0 bottom-4 text-center text-lg font-bold tracking-[0.18em] text-white/90">
+                                            {member.initials}
+                                        </div>
                                     </div>
-                                    <div className="bg-[#0a0f1e] text-white px-4 py-2 rounded-full text-[10px] font-mono uppercase tracking-[0.3em] font-bold">
+                                    <div className="rounded-full border border-[#0a0f1e]/10 bg-[#0a0f1e] px-3 py-2 text-[9px] font-mono uppercase tracking-[0.28em] text-white">
                                         {member.label}
                                     </div>
                                 </div>
 
-                                <h3 className="text-2xl font-bold tracking-tight mb-2">{member.name}</h3>
+                                <h3 className="mb-2 text-2xl font-bold tracking-tight text-[#0a0f1e]">{member.name}</h3>
                                 <div className="mb-4">
-                                    <p className="text-[11px] font-mono uppercase tracking-[0.35em] text-[#2dd4bf] font-bold mb-2">{member.role}</p>
+                                    <p className="mb-2 text-[11px] font-mono uppercase tracking-[0.35em] text-[#2dd4bf] font-bold">{member.role}</p>
                                     <p className="text-base font-bold tracking-tight text-[#0a0f1e]">{member.title}</p>
                                 </div>
-                                <p className="text-sm text-[#0a0f1e]/60 leading-relaxed">{member.description}</p>
+                                <p className="text-sm leading-relaxed text-[#0a0f1e]/60">{member.description}</p>
                             </div>
                         ))}
                     </div>
                 </div>
 
-                {/* Main Content: Two Column Editorial Layout */}
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-start mb-32">
 
                     {/* Left Side: The "Mission" */}
