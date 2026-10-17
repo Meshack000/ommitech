@@ -196,7 +196,7 @@ export default function ServicesPage() {
                         </p>
                     </div>
                     <Link
-                        to="/#contact"
+                        to="/contact"
                         className="inline-flex shrink-0 items-center justify-center gap-3 bg-[#0a0f1e] px-7 py-4 text-xs font-bold uppercase tracking-widest text-white transition-colors hover:bg-[#2dd4bf] hover:text-[#0a0f1e]"
                     >
                         Get in touch <span aria-hidden="true">→</span>

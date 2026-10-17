@@ -287,9 +287,9 @@ export default function RecentFeatures() {
                                 Browse a few examples across mobile product design, web development, and brand identity. Each one starts with a problem to solve and a person on the other side of the screen.
                             </p>
                         </div>
-                        <a href="/#contact" className="inline-flex items-center gap-3 text-xs font-bold uppercase tracking-widest text-[#0a0f1e] transition-colors hover:text-[#11998e]">
+                        <Link to="/contact" className="inline-flex items-center gap-3 text-xs font-bold uppercase tracking-widest text-[#0a0f1e] transition-colors hover:text-[#11998e]">
                             Discuss a project <span aria-hidden="true" className="text-[#2dd4bf]">→</span>
-                        </a>
+                        </Link>
                     </div>
 
                     <div className="mt-8 flex flex-wrap gap-3">
@@ -401,9 +401,9 @@ export default function RecentFeatures() {
                         <h3 className="text-2xl font-bold tracking-tight md:text-3xl">Ready to build or ready to learn?</h3>
                         <p className="mt-2 text-sm leading-6 text-[#0a0f1e]/60">Tell us what you have in mind, and we’ll help you find the right way forward.</p>
                     </div>
-                    <a href="/#contact" className="inline-flex shrink-0 items-center justify-center gap-3 bg-[#0a0f1e] px-7 py-4 text-xs font-bold uppercase tracking-widest text-white transition-colors hover:bg-[#2dd4bf] hover:text-[#0a0f1e]">
+                    <Link to="/contact" className="inline-flex shrink-0 items-center justify-center gap-3 bg-[#0a0f1e] px-7 py-4 text-xs font-bold uppercase tracking-widest text-white transition-colors hover:bg-[#2dd4bf] hover:text-[#0a0f1e]">
                         Get in touch <span aria-hidden="true">→</span>
-                    </a>
+                    </Link>
                 </div>
             </div>
         </section>

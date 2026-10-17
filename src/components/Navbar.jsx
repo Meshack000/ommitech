@@ -32,12 +32,12 @@ function Navbar() {
                         <li><Link to="/about" className="transition-colors hover:text-[#14b8a6]">About</Link></li>
                     </ul>
 
-                    <a
-                        href="/#contact"
+                    <Link
+                        to="/contact"
                         className="hidden justify-self-end rounded-md bg-[#0a0f1e] px-4 py-3 text-xs font-bold uppercase tracking-wider text-white transition-colors hover:bg-[#2dd4bf] hover:text-[#0a0f1e] md:inline-flex lg:px-5"
                     >
                         Get in touch
-                    </a>
+                    </Link>
 
                     <button
                         type="button"
@@ -61,13 +61,13 @@ function Navbar() {
                                 <li><a href="/#training" onClick={closeMenu} className="block transition-colors hover:text-[#14b8a6]">Training</a></li>
                                 <li><Link to="/about" onClick={closeMenu} className="block transition-colors hover:text-[#14b8a6]">About</Link></li>
                                 <li>
-                                    <a
-                                        href="/#contact"
+                                    <Link
+                                        to="/contact"
                                         onClick={closeMenu}
                                         className="inline-flex rounded-md bg-[#0a0f1e] px-5 py-3 text-xs font-bold uppercase tracking-wider text-white transition-colors hover:bg-[#2dd4bf] hover:text-[#0a0f1e]"
                                     >
                                         Get in touch
-                                    </a>
+                                    </Link>
                                 </li>
                             </ul>
                         </div>

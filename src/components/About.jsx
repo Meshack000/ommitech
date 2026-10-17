@@ -157,7 +157,7 @@ export default function AboutPage() {
                         </p>
                     </div>
                     <Link
-                        to="/#contact"
+                        to="/contact"
                         className="inline-flex items-center justify-center bg-[#0a0f1e] text-white text-xs font-bold uppercase tracking-widest px-8 py-4 hover:bg-[#2dd4bf] hover:text-[#0a0f1e] transition-colors duration-300 text-center"
                     >
                         Get in touch <span aria-hidden="true" className="ml-3">→</span>

@@ -8,6 +8,7 @@ import AboutPage from './components/About'
 import CodePreviewCard from './components/CodePreviewCard'
 import ServicesPage from './components/Services'
 import ReserveSpotPage from './components/ReserveSpot'
+import ContactPage from './components/Contact'
 
 function Home() {
   return (
@@ -73,6 +74,12 @@ function SiteMetadata() {
         'Request a spot in an Ommitech live online web development or UI/UX class. Ask for upcoming class times and joining details.',
       keywords: 'online web development class Ghana, online UI UX class Ghana, Ommitech training, reserve class spot',
     },
+    '/contact': {
+      title: 'Contact Ommitech | Website Design & UI/UX Studio in Kumasi, Ghana',
+      description:
+        'Contact Ommitech in Kumasi, Ghana by email, phone, WhatsApp, Instagram, or LinkedIn. Tell us about your website, design, or training needs.',
+      keywords: 'contact Ommitech, Ommitech Ghana, website design Kumasi, UI UX design Ghana, contact web developer Kumasi',
+    },
   }
 
   useEffect(() => {
@@ -119,6 +126,7 @@ function App() {
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/reserve-spot" element={<ReserveSpotPage />} />
+          <Route path="/contact" element={<ContactPage />} />
         </Routes>
 
         <Footer />
