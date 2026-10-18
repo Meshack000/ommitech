@@ -61,7 +61,6 @@ const workItems = [
         title: "Kumasi Business Portal",
         category: "Web Development",
         image: null,
-        href: null,
         tag: "Website + CRM",
         description: "A clean digital platform that helped a local business connect with new customers and manage inquiries more efficiently.",
         result: "Improved online visibility and customer response speed",
@@ -71,7 +70,6 @@ const workItems = [
         title: "Campus Event Experience",
         category: "UI/UX Design",
         image: null,
-        href: null,
         tag: "Mobile-first UX",
         description: "A user-focused event landing page designed to help students discover workshops, speakers, and registration details with ease.",
         result: "Simplified event discovery and higher engagement",
@@ -81,7 +79,6 @@ const workItems = [
         title: "Freshbrand Studio",
         category: "Brand Identity",
         image: null,
-        href: null,
         tag: "Brand system",
         description: "A visual identity refresh for a growing creative brand, built around clearer communication and stronger recognition.",
         result: "Created a more confident and memorable brand presence",
@@ -326,14 +323,27 @@ export default function RecentFeatures() {
                                         <WorkArtwork item={item} index={index} />
                                     </a>
                                 ) : (
-                                    <WorkArtwork item={item} index={index} />
+                                    <Link
+                                        to="/contact"
+                                        aria-label={`Discuss a similar ${item.category.toLowerCase()} project`}
+                                        className="block rounded-2xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#11998e]"
+                                    >
+                                        <WorkArtwork item={item} index={index} />
+                                    </Link>
                                 )}
                                 <div className="flex items-start justify-between gap-4 pt-5">
                                     <div className="min-w-0">
                                         <h4 className="text-2xl font-bold tracking-tight text-[#0a0f1e] transition-colors duration-300 group-hover:text-[#11998e] sm:text-3xl">
                                             {item.href ? (
                                                 <a href={item.href} target="_blank" rel="noopener noreferrer">{item.title}</a>
-                                            ) : item.title}
+                                            ) : (
+                                                <Link
+                                                    to="/contact"
+                                                    aria-label={`Discuss a similar ${item.category.toLowerCase()} project`}
+                                                >
+                                                    {item.title}
+                                                </Link>
+                                            )}
                                         </h4>
                                         <p className="mt-2 text-sm text-[#0a0f1e]/55">{item.tag}</p>
                                     </div>
@@ -342,7 +352,7 @@ export default function RecentFeatures() {
                                 <div className="mt-4 flex flex-wrap items-center justify-between gap-3 border-t border-[#0a0f1e]/10 pt-3">
                                     <span className="text-[11px] font-medium text-[#0a0f1e]/65">{item.category}</span>
                                     <span className="text-right text-[11px] text-[#0a0f1e]/40">{item.stack.slice(0, 2).join(" · ")}</span>
-                                    {item.href && (
+                                    {item.href ? (
                                         <a
                                             href={item.href}
                                             target="_blank"
@@ -351,6 +361,13 @@ export default function RecentFeatures() {
                                         >
                                             View case study
                                         </a>
+                                    ) : (
+                                        <Link
+                                            to="/contact"
+                                            className="shrink-0 text-[11px] font-semibold text-[#11998e] underline-offset-4 hover:underline focus-visible:underline"
+                                        >
+                                            Discuss a similar project
+                                        </Link>
                                     )}
                                 </div>
                             </article>
