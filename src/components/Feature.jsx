@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import gcbMobileBanking from '../assets/images/gcb-mobile-banking.webp';
-import vantaSplash from '../assets/images/vanta 1.png';
-import vantaScreens from '../assets/images/vanta 2.png';
 import vantaShowcase from '../assets/images/vanta 3.png';
 import { StopwatchWidget } from './widgets/stopwatch-widget';
 
@@ -82,7 +80,7 @@ const workItems = [
         title: "Vanta Car Rental App",
         category: "UI/UX Design",
         path: "/vanta",
-        images: [vantaSplash, vantaScreens, vantaShowcase],
+        image: vantaShowcase,
         tag: "Premium car rental · Mobile app UI",
         description: "A premium car-rental app concept covering the welcome experience, vehicle discovery, and booking flow.",
         result: "Designed a polished end-to-end car rental experience",

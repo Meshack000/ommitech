@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import vantaShowcase from "../assets/images/vanta 3.png"
+import heroPhoneComposition from "../assets/images/hero-phone-composition.webp"
 
 const heroMessages = [
     "We build websites.",
@@ -76,13 +76,13 @@ export default function Hero() {
                 {/* Right — Single phone visual */}
                 <div className="flex justify-center lg:justify-end lg:-mr-12 xl:-mr-24">
                     <img
-                        src={vantaShowcase}
-                        alt="Vanta premium car rental mobile app design showcase"
-                        width="1600"
-                        height="2000"
+                        src={heroPhoneComposition}
+                        alt="Phone mockup with floating social media and audience cards"
+                        width="768"
+                        height="768"
                         fetchPriority="high"
                         decoding="async"
-                        className="w-full max-w-[440px] h-auto object-contain lg:max-w-[480px]"
+                        className="w-full max-w-[500px] h-auto object-contain lg:max-w-[620px] xl:max-w-[740px]"
                     />
                 </div>
 
