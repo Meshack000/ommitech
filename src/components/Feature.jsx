@@ -81,6 +81,7 @@ const workItems = [
     {
         title: "Vanta Car Rental App",
         category: "UI/UX Design",
+        path: "/vanta",
         images: [vantaSplash, vantaScreens, vantaShowcase],
         tag: "Premium car rental · Mobile app UI",
         description: "A premium car-rental app concept covering the welcome experience, vehicle discovery, and booking flow.",
@@ -328,7 +329,15 @@ export default function RecentFeatures() {
                                 key={`${item.title}-${index}`}
                                 className="group min-w-0"
                             >
-                                {item.href ? (
+                                {item.path ? (
+                                    <Link
+                                        to={item.path}
+                                        aria-label={`View ${item.title} project`}
+                                        className="block rounded-2xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#11998e]"
+                                    >
+                                        <WorkArtwork item={item} index={index} />
+                                    </Link>
+                                ) : item.href ? (
                                     <a
                                         href={item.href}
                                         target="_blank"
@@ -350,7 +359,9 @@ export default function RecentFeatures() {
                                 <div className="flex items-start justify-between gap-4 pt-5">
                                     <div className="min-w-0">
                                         <h4 className="text-2xl font-bold tracking-tight text-[#0a0f1e] transition-colors duration-300 group-hover:text-[#11998e] sm:text-3xl">
-                                            {item.href ? (
+                                            {item.path ? (
+                                                <Link to={item.path}>{item.title}</Link>
+                                            ) : item.href ? (
                                                 <a href={item.href} target="_blank" rel="noopener noreferrer">{item.title}</a>
                                             ) : (
                                                 <Link
@@ -368,7 +379,14 @@ export default function RecentFeatures() {
                                 <div className="mt-4 flex flex-wrap items-center justify-between gap-3 border-t border-[#0a0f1e]/10 pt-3">
                                     <span className="text-[11px] font-medium text-[#0a0f1e]/65">{item.category}</span>
                                     <span className="text-right text-[11px] text-[#0a0f1e]/40">{item.stack.slice(0, 2).join(" · ")}</span>
-                                    {item.href ? (
+                                    {item.path ? (
+                                        <Link
+                                            to={item.path}
+                                            className="shrink-0 text-[11px] font-semibold text-[#11998e] underline-offset-4 hover:underline focus-visible:underline"
+                                        >
+                                            View project
+                                        </Link>
+                                    ) : item.href ? (
                                         <a
                                             href={item.href}
                                             target="_blank"

@@ -9,6 +9,7 @@ import CodePreviewCard from './components/CodePreviewCard'
 import ServicesPage from './components/Services'
 import ReserveSpotPage from './components/ReserveSpot'
 import ContactPage from './components/Contact'
+import VantaPage from './components/Vanta'
 
 function Home() {
   return (
@@ -64,6 +65,12 @@ const routeMeta = {
       'Learn about Ommitech, a growing IT company and UI/UX studio in Kumasi, Ghana that builds websites, digital products, and practical tech training.',
     keywords:
       'about Ommitech, IT company Kumasi, UI UX company Kumasi, Ghana digital studio, web design company Ghana, Kumasi technology company',
+  },
+  '/vanta': {
+    title: 'Vanta Car Rental App | UI/UX Design Case Study | Ommitech',
+    description:
+      'Explore Vanta, a premium car rental mobile app concept designed by Ommitech, from vehicle discovery to booking.',
+    keywords: 'Vanta car rental app, mobile app UI UX, car rental app design, Ommitech portfolio',
   },
   '/reserve-spot': {
     title: 'Reserve a Spot in an Online Class | Ommitech',
@@ -125,6 +132,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/vanta" element={<VantaPage />} />
           <Route path="/reserve-spot" element={<ReserveSpotPage />} />
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
