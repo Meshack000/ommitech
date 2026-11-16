@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import gcbMobileBanking from '../assets/images/gcb-mobile-banking.webp';
+import vantaSplash from '../assets/images/vanta 1.png';
+import vantaScreens from '../assets/images/vanta 2.png';
+import vantaShowcase from '../assets/images/vanta 3.png';
 import { StopwatchWidget } from './widgets/stopwatch-widget';
 
 const services = [
@@ -76,13 +79,13 @@ const workItems = [
         stack: ["UX strategy", "Wireframes", "Prototype"]
     },
     {
-        title: "Freshbrand Studio",
-        category: "Brand Identity",
-        image: null,
-        tag: "Brand system",
-        description: "A visual identity refresh for a growing creative brand, built around clearer communication and stronger recognition.",
-        result: "Created a more confident and memorable brand presence",
-        stack: ["Logo", "Color", "Typography"]
+        title: "Vanta Car Rental App",
+        category: "UI/UX Design",
+        images: [vantaSplash, vantaScreens, vantaShowcase],
+        tag: "Premium car rental · Mobile app UI",
+        description: "A premium car-rental app concept covering the welcome experience, vehicle discovery, and booking flow.",
+        result: "Designed a polished end-to-end car rental experience",
+        stack: ["Mobile App", "UI/UX", "Car Rental"]
     }
 ];
 
@@ -93,7 +96,7 @@ function WorkArtwork({ item, index }) {
     return (
         <div
             className={`relative flex aspect-[1.35] items-center justify-center overflow-hidden rounded-2xl p-5 sm:p-8 ${
-                item.image
+                item.image || item.images
                     ? "bg-[#f7f7f5]"
                     : isBrand
                         ? "bg-[#dce8df]"
@@ -115,6 +118,19 @@ function WorkArtwork({ item, index }) {
                     loading="lazy"
                     decoding="async"
                 />
+            ) : item.images ? (
+                <div className="absolute inset-3 grid grid-cols-[0.8fr_1.2fr] grid-rows-2 gap-2 overflow-hidden rounded-xl bg-[#101010] sm:inset-4 sm:gap-3">
+                    {item.images.map((image, imageIndex) => (
+                        <img
+                            key={image}
+                            src={image}
+                            alt={`${item.title} app design ${imageIndex + 1}`}
+                            className={imageIndex === 0 ? "row-span-2 h-full w-full object-contain" : "h-full w-full object-contain"}
+                            loading="lazy"
+                            decoding="async"
+                        />
+                    ))}
+                </div>
             ) : isBrand ? (
                 <div className="relative flex h-full w-full items-center justify-center overflow-hidden rounded-xl bg-[#f5f3ea] shadow-[0_24px_60px_rgba(10,15,30,0.12)] transition-transform duration-700 group-hover:scale-[1.025]">
                     <div className="absolute left-5 top-5 flex gap-1.5">
