@@ -91,12 +91,15 @@ const workItems = [
 function WorkArtwork({ item, index }) {
     const isDesign = item.category === "UI/UX Design";
     const isBrand = item.category === "Brand Identity";
+    const isVanta = item.path === "/vanta";
 
     return (
         <div
             className={`relative flex aspect-[1.35] items-center justify-center overflow-hidden rounded-2xl p-5 sm:p-8 ${
-                item.image || item.images
-                    ? "bg-[#f7f7f5]"
+                isVanta
+                    ? "bg-[#08090a]"
+                    : item.image || item.images
+                        ? "bg-[#f7f7f5]"
                     : isBrand
                         ? "bg-[#dce8df]"
                         : isDesign
@@ -113,7 +116,9 @@ function WorkArtwork({ item, index }) {
                 <img
                     src={item.image}
                     alt={`${item.title} project preview`}
-                    className="absolute inset-0 h-full w-full object-contain p-2 transition-transform duration-700 group-hover:scale-[1.025] sm:p-4"
+                    className={`absolute inset-0 h-full w-full object-contain transition-transform duration-700 group-hover:scale-[1.025] ${
+                        isVanta ? "p-0" : "p-2 sm:p-4"
+                    }`}
                     loading="lazy"
                     decoding="async"
                 />
@@ -212,7 +217,9 @@ function WorkArtwork({ item, index }) {
                     </div>
                 </div>
             )}
-            <span className="absolute bottom-3 left-4 font-mono text-[9px] uppercase tracking-[0.2em] text-[#0a0f1e]/40 sm:bottom-5 sm:left-6">
+            <span className={`absolute bottom-3 left-4 font-mono text-[9px] uppercase tracking-[0.2em] sm:bottom-5 sm:left-6 ${
+                isVanta ? "text-white/40" : "text-[#0a0f1e]/40"
+            }`}>
                 Selected work <span className="mx-1 text-[#0a0f1e]/20">/</span> 0{index + 1}
             </span>
         </div>
