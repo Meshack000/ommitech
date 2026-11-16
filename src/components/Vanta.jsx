@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
-import vantaSplash from '../assets/images/vanta 1.png'
-import vantaScreens from '../assets/images/vanta 2.png'
-import vantaShowcase from '../assets/images/vanta 3.png'
+import vantaSplash from '../assets/images/vanta-1.webp'
+import vantaScreens from '../assets/images/vanta-2.webp'
+import vantaShowcase from '../assets/images/vanta-3.webp'
 
 const screens = [
     {
@@ -9,6 +9,8 @@ const screens = [
         title: 'The first impression',
         description: 'A focused welcome screen introduces the premium feel and gets the journey moving.',
         src: vantaSplash,
+        width: 1600,
+        height: 2224,
         alt: 'Vanta welcome screen and car rental app home screen'
     },
     {
@@ -16,6 +18,8 @@ const screens = [
         title: 'The full booking journey',
         description: 'A closer look at browsing, vehicle details, and a clear booking summary.',
         src: vantaScreens,
+        width: 2000,
+        height: 935,
         alt: 'Vanta app screens for finding cars, viewing vehicle details, and confirming a booking'
     }
 ]
@@ -102,9 +106,10 @@ export default function VantaPage() {
                             <img
                                 src={vantaShowcase}
                                 alt="Vanta mobile app concept showing the welcome, car discovery, vehicle details, and booking screens"
-                                width="2000"
-                                height="909"
+                                width="1600"
+                                height="2000"
                                 fetchPriority="high"
+                                loading="eager"
                                 decoding="async"
                                 className="h-auto w-full"
                             />
@@ -168,6 +173,8 @@ export default function VantaPage() {
                                 <img
                                     src={screen.src}
                                     alt={screen.alt}
+                                    width={screen.width}
+                                    height={screen.height}
                                     loading="lazy"
                                     decoding="async"
                                     className="h-auto max-h-[780px] w-full object-contain"

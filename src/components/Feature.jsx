@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import gcbMobileBanking from '../assets/images/gcb-mobile-banking.webp';
-import vantaShowcase from '../assets/images/vanta 3.png';
+import vantaShowcase from '../assets/images/vanta-3.webp';
 import { StopwatchWidget } from './widgets/stopwatch-widget';
 
 const services = [
